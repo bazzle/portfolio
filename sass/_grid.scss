@@ -1,0 +1,159 @@
+
+
+.row{
+  width:100vw;
+  padding-left:0;
+  padding-right:0;
+  @include bp-minus($bp3){
+    width:90vw;
+    padding-left:5vw;
+    padding-right:5vw;
+  }
+  max-width:$site-width;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.grid{
+  width:90vw;
+  padding-left:5vw;
+  padding-right:5vw;
+  max-width:$site-width;
+  margin:0 auto;
+  flex-direction:column;
+  display:flex;
+  justify-content:flex-start;
+  @include bp($bp3){
+    flex-direction:row;
+  }
+  @include bp($bp3){
+  &--row-2{
+    .grid-1{
+      width:45vw;
+    }
+    .grid-2{
+      width:100vw;
+    }
+  }
+  &--row-3{
+    .grid-1{
+      width:30vw;
+    }
+    .grid-2{
+      width:60vw;
+    }
+    .grid-3{
+      width:90vw;
+    }
+  }
+  &--row-4{
+    .grid-1{
+      width:22.5vw;
+    }
+    .grid-2{
+      width:45vw;
+    }
+    .grid-3{
+      width:67.2vw;
+    }
+    .grid-4{
+      width:90%;
+    }
+  }
+
+  &--row-5 {
+    .grid-1 {
+      width: 18vw;
+    }
+    .grid-2 {
+      width: 36vw;
+    }
+    .grid-3 {
+      width: 54vw;
+    }
+    .grid-4 {
+      width: 72vw;
+    }
+    .grid-5 {
+      width: 90vw;
+    }
+  }
+
+  &--row-6 {
+    .grid-1 {
+      width: 15vw;
+    }
+    .grid-2 {
+      width: 30vw;
+    }
+    .grid-3 {
+      width: 45vw;
+    }
+    .grid-4 {
+      width: 60vw;
+    }
+    .grid-5 {
+      width: 75vw;
+    }
+    .grid-6 {
+      width: 90vw;
+    }
+  }
+
+  &--row-8{
+    .grid-1{
+      width:11.25vw;
+    }
+    .grid-2{
+      width:22.5vw;
+    }
+    .grid-3{
+      width:33.75vw;
+    }
+    .grid-4{
+      width:45vw;
+    }
+    .grid-5{
+      width:56.25vw;
+    }
+    .grid-6{
+      width:67.25vw;
+    }
+    .grid-7{
+      width:78.75vw;
+    }
+    .grid-8{
+      width:90vw;
+    }
+  }
+    
+  }
+  &__item{
+    box-sizing:border-box;
+  	width:33.33%;
+    display:flex;
+    flex-direction:column;
+  	@include bp($bp1){
+  		width:50%;
+  	}
+  	@include bp($bp3){
+  		width:100%;
+      padding-left:$textmarginmobile;
+      padding-right:$textmarginmobile;
+  	}
+  }
+  &__text-padding{
+    @include bp($bp3){
+      padding-left:5vw;
+    }
+  }
+}
+
+
+main{
+  @include bp($bp1){
+    margin-top:$header-height;
+  }
+}

@@ -1,0 +1,52 @@
+{% if page.layout == 'home' %}
+   
+{% include grid-item.html
+	image="thumbs-indigo.jpg"
+	image-alt="Indigo Trust logo"
+	title="Indigo Trust"
+	intro="Website design and build for charitable trust fund, Indigo Trust."
+	client="Helpful Digital"
+	link="indigo-trust.html"
+	description="
+		<p>
+			At helpful Technology, I along with the development team designed and built this website for Indigo Trust &amp; a charitable trust which donates money to tech companies in Sub-Saharan Africa.
+		</p>
+	"
+%}
+
+{% else %}
+
+{% include work-item.html
+	bgcolor="#f9f9f9"
+	title="Indigo Trust"
+	intro="Website design and build for charitable trust fund, Indigo Trust."
+	client="Helpful Digital"
+	link="indigo-trust.html"
+	description="
+		<p>
+			At helpful Technology, I along with the development team designed and built this website for Indigo Trust &mdash; a charitable trust which donates money to tech companies in Sub-Saharan Africa.
+		</p>
+	"
+	content-main="
+		<img src='/assets/images/projects/indigo-homepage.jpg' alt='homepage' />
+		<div class='work-item__main-snippet'>
+			<p>
+				Their previous site was a basic WordPress template which soon became unfit for purpose in dealing with the different content types and the considerable amount of content which needed a seach and filter mechanism to allow visitors to find the content they are looking for.
+			</p>
+			<p>
+				The two main use cases for the new website is finding information on companies and projects that have already had funding granted, and to find out how to apply for a grant. Even though the application procedure is off-site, Indigo wanted the process to be explained in a step-by-step format.
+			</p>
+		</div>
+		<img src='/assets/images/projects/indigo-devices-1.jpg' alt='as it looks on devices' />
+		<div class='work-item__main-snippet'>
+			<p>
+				Due to thought leadership being such an important aspect of the company, and the website being the primary communication platform for the company, Indigo were looking to vastly improve the reading experience of the hundreds of articles on their site. They also wanted to make the page more impactful to increase readership.
+			</p>
+		</div>
+		<img src='/assets/images/projects/indigo-desktop-3.jpg' alt='News article' />
+	"
+	next-item-link="<a href='located.html'>Located</a>"
+%}
+
+{% endif %}
+

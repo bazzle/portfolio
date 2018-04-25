@@ -1,0 +1,78 @@
+.about{
+	&__main-body{
+		width:calc(50% - #{$grid-space});
+		padding-bottom:$text-padding-std;
+		padding-right:5%;
+		@include bp-minus($bp1){
+			width:100%;
+			padding-right:0;
+		}
+	}
+	&__statement{
+		@include text-body;
+	}
+	&__leadin{
+		@include intro-text;
+	}
+	&__profile{
+		width:25%;
+		padding-right:$grid-space;
+		@include bp-minus($bp1){
+			width:100%;
+		}
+	}
+	&__profile-pic{
+		padding-bottom:$text-padding-std *2;
+		img{
+			width:100%;
+			max-width:200px;
+			height:auto;
+			border-radius:50%;
+		}
+	}
+	&__links{
+		padding:$text-padding-std 0;
+		@include bp-minus($bp1){
+		}
+		a{
+			@include link-styled;
+			@include bp-minus($bp1){
+				display:block;
+				padding-bottom:.5em;
+			}
+			&:last-of-type{
+				padding-bottom:0;
+			}
+		}
+		span{
+			padding:0 1em;
+			color:$black-lighten;
+			text-decoration:none;
+			@include bp-minus($bp1){
+				display:none;
+			}
+		}
+	}
+	&__abilities{
+		width:25%;
+		padding-left:$grid-space;
+		padding-bottom:1em;
+		@include bp-minus($bp1){
+			padding-left:0;
+			width:100%;
+		}
+		ul{
+			color:$color-brand;
+			list-style-type:square;
+			padding-left:1em;
+			padding-bottom:1em;
+			span{
+				color:$black;
+			}
+		}
+	}
+	&__abilities-title{
+		font-weight: $bold;
+		padding-bottom:1em;
+	}
+}

@@ -1,0 +1,75 @@
+<div class="cp job">
+
+			<div class="panel__inner">
+
+					<div class="job__profile">
+						<div class="job__logo">
+							{{ include.logo }}
+						</div>
+						<div class="job__details">
+							<h3 class="job__company">{{ include.company }}</h3>
+							<p class="job__role">
+								{{ include.role }}
+							</p>
+							<div class="job__date">
+								{{ include.dates }}
+							</div>
+						</div>
+					</div>
+
+					<div class="job__main-body">
+						<div class="job__about">
+							{{ include.content }}
+						</div>
+
+					
+						{{ include.gallery }}
+
+					</div>
+
+
+
+					<div class="job__resp">
+						<div class="job__resp-chart">
+							<div class="chart">
+								
+								<canvas id="{{ include.nameslug }}" width="400" height="400"></canvas>
+								<script>
+								var ctx = document.getElementById("{{ include.nameslug }}").getContext('2d');
+								var myChart = new Chart(ctx, {
+								    type: 'pie',
+								    responsive: 'false',
+								    data: {
+								        labels: {{ include.chartlabels }},
+								        datasets: [{
+								            label: '# of Votes',
+								            data: {{ include.chartdata }},
+								            backgroundColor: 'rgba(235,63,63,.9)',
+								            borderColor: '#f2f2f2',
+								            borderWidth: 6
+								        }]
+								    },
+								    options: {
+								        legend: {
+								            display: false
+								        }
+								    }
+								});
+								</script>
+
+
+							</div>
+						</div>
+
+						<div class="job__tasks">
+						<h3 class="job__tasks-title">Tasks</h3>
+						<ul>
+							{{ include.tasks }}
+						</ul>
+					</div>
+
+
+					</div>
+			</div>
+
+		</div>

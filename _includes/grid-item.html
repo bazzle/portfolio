@@ -1,0 +1,51 @@
+<article class="grid-work__item">
+
+	<div class="grid-work__item-image">
+		<a class="work-image-link" href="{{ include.link }}">
+			<img src="/assets/images/projects/{{ include.image }}" srcset="/assets/images/projects/{{ include.image }} 2x" alt="Photograph of a blurred waterfall in Iceland with a conical mountain behind it">
+		</a>
+	</div>
+
+	<div class="grid-work__item-panel">
+		<div class="grid-work__item-panel-extend">
+			<div class="grid-work__item-panel-inner">
+				<svg class="grid-work__item-panel-close">
+					<use xlink:href="#close" />
+				</svg>
+				<div class="grid-work__item-panel-content">
+					<div class="cp project-about">
+						<div class="project-about__metadata">
+							<h1 class="project-about__title">
+								<a href="{{ include.link }}">
+									{{ include.title }}
+								</a>
+							</h1>
+							<p class="project-about__intro">
+								{{ include.intro }}
+							</p>
+							<p class="project-about__client">
+								&mdash; {{ include.client }}
+							</p>
+						</div>
+						<div class="project-about__description">
+							{{ include.description }}
+						</div>
+
+						<a class="cp button" href="{{ include.link }}">
+							<div class="button__inner">
+								<span>
+									View project
+								</span>
+								<svg class="button__icon">
+									<use xlink:href="#arrow" />
+								</svg>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</article>

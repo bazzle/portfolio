@@ -1,0 +1,55 @@
+<article class="cp work-item">
+
+	<div class="panel panel-work-item-head">
+		<div class="row">
+		<div class="work-item__head">
+
+			<div class="work-item__about">
+				<div class="cp project-about">
+					<div class="project-about__metadata">
+						<h1 class="project-about__title">{{ include.title }}</h1>
+						<p class="project-about__intro">
+							{{ include.intro }}
+						</p>
+						<p class="project-about__client">
+							&mdash; {{ include.client }}
+						</p>
+					</div>
+					<div class="project-about__description">
+						{{ include.description }}
+					</div>
+				</div>
+			</div>
+		</div><!-- end of head -->
+		</div>
+	</div><!-- end panel --> 
+
+
+	<div class="panel panel-work-item-banner">
+		<div class="work-item__banner">
+			<img style="object-position:{{ include.banner-image-position }}" src="../assets/images/projects/{{ include.banner-image }}" alt=""/>
+		</div>
+	</div>
+
+	<div class="panel panel-work-item-main" style="background-color:{{ include.bgcolor }}">
+		<div class="row">
+			<div class="work-item__main">
+				{{ include.content-main }}
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-work-item-pagination">
+		<div class="row">
+			<div class="work-item__back">
+				<a href="/index.html">Back to Homepage</a>
+			</div>
+			<div class="work-item__next-item">
+				<span>Next Project &mdash;</span>
+				{{ include.next-item-link }}
+			</div>
+		</div>
+	</div>
+
+
+</article>

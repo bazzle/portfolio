@@ -1,0 +1,23 @@
+.intro{
+	@include align-left;
+	width:100%;
+	height:300px;
+	position:relative;
+	//z-index:1;
+	&__statement{
+		margin-left:25%;
+		width:50%;
+		color:$white;
+		@include text-display(2.6em);
+		@include text-underline($color-brand);
+		@include bp-minus($bp2){
+			@include text-display(2.4em);
+			margin-left:0;
+			width:90%;
+		}
+	}
+	@include bp-minus($bp1){
+		height:calc(100vh - #{$header-height});
+		position:relative;
+	};
+}

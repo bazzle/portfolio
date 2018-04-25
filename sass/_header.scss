@@ -1,0 +1,28 @@
+header{
+	height:$header-height;
+	width:100%;
+	@include bp-minus($bp1){
+		position:fixed;
+		width:100%;
+		top:0;
+		left:0;
+		background-color:$white;
+		z-index:10;
+	}
+}
+
+.header{
+	&__logo{
+		width:25%;
+		a{
+			color:$black-lighten;
+		}
+	}
+	&__title{
+		padding:1.2em 0;
+		font-weight:$bold;
+		@include bp-minus($bp1){
+			margin-left:0;
+		}
+	}
+}

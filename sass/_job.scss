@@ -1,0 +1,79 @@
+.job{
+  padding-top:$text-padding-std;
+  visibility: hidden;
+  opacity:0;
+  width:0;
+  height:0;
+  overflow:hidden;
+  transition: opacity .8s .8s;
+  &__logo{
+    img{
+      width:auto;
+      max-width:220px;
+      height:auto;
+    }
+  }
+  &.job-show{
+    width:100%;
+    min-height:40em;
+    visibility: visible;
+    opacity:1;
+    width:100%;
+    height:auto;
+  }
+  &__details{
+    display:none;
+  }
+  &__profile{
+    width:25%;
+    padding-right:$grid-space;
+    position:relative;
+  }
+  &__main-body{
+    width:calc(50% - #{$grid-space});
+    padding-bottom:$text-padding-std;
+    padding-right:5%;
+    @include bp-minus($bp1){
+      width:100%;
+      padding-right:0;
+    }
+  }
+  &__about{
+    margin-bottom:$text-padding-std*2;
+  }
+  p{
+    margin-bottom:$text-padding-std;
+  }
+  &__intro{
+    @include intro-text;
+    font-weight:$bold;
+  }
+  &__resp{
+    width:25%;
+    margin-left:$grid-space;
+  }
+  &__resp-chart{
+    display:flex;
+    justify-content:flex-start;
+    margin-bottom:$text-padding-std;
+    .chart{
+      max-width:170px;
+      max-height:170px;
+    }
+  }
+  &__tasks{
+    ul{
+      color:$color-brand;
+      list-style-type:square;
+      padding-left:1em;
+      padding-bottom:1em;
+      span{
+        color:$black;
+      }
+    }
+  }
+  &__tasks-title{
+    font-weight: $bold;
+    padding-bottom:1em;
+  }
+}

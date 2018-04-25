@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+  {% include head.html %}
+</head>
+
+  <body>
+    {% include dest.svg %}
+    <header>
+        {% include header.html %}
+    </header>
+    
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        {% include footer.html %}
+    </footer>
+  </body>
+
+  <script src="js/main.js"></script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles.js"></script>
+
+</html>

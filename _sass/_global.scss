@@ -1,0 +1,282 @@
+///////// MIXINS AND VARIABLES ////////////////////////////////////////////////////////////////////////
+
+// paths
+$path-images: "../assets/images";
+
+// colors
+$color-brand:rgb(67, 58, 199);
+$color-accent:gold;
+$black:#262626;
+$white: #ffffff;
+
+// font loading
+/*
+font-family: 'Hammersmith One', sans-serif;
+font-family: 'Amaranth', sans-serif;
+*/
+
+// fonts
+$font-brand:sans-serif;
+$font-std:sans-serif;
+$font-display:sans-serif;
+
+// font-size;
+$font-size-base:62.5%;
+$font-size-std:1.5rem;
+
+// font weights
+$font-weight-std:500;
+$font-weight-bold:600;
+$font-weight-extrabold:900;
+$font-weight-text-color:$black;
+
+// font margins
+$text-padding-std:1.5rem;
+
+// line height
+$line-height:1.7;
+
+// text formatting
+@mixin text-body{
+  line-height:$line-height;
+  h1, h2, h3, h4, h5{
+    font-size:font-size-std;
+    padding:0;
+    margin:0;
+    margin-bottom:$text-padding-std;
+  }
+  p, ol, ul{
+    padding:0;
+    margin:0;
+    margin-bottom:$text-padding-std;
+  }
+  ul{
+    padding-left:1em;
+    box-sizing:border-box;
+  }
+  li{
+    width:calc(100% - 1em);
+    list-style:none;
+    position:relative;
+    &:before{
+      content:'\25A0';
+      color:$color-accent;
+      margin-right:.5em;
+    }
+  }
+}
+
+// link color
+$link-color:$black;
+
+// text shadow
+$text-shadow-std: 1px 1px 2px $black;
+
+// raised item shadow
+$shadow:3px 3px 3px rgba(93, 93, 93, 0.1);
+
+// lines
+$line-solid: 1px;
+$line-thick: 2px;
+
+// borders
+$border-solid: $black solid 1px;
+$border-thick: $black solid 2px;
+$border-feint: rgba(0, 0, 0, 0.1) solid 1px;
+
+// header
+$header-height:80px;
+
+// margin on mobile
+$textmarginmobile:4rem;
+
+// site width
+$site-width:2000px;
+
+// Aspect ratios
+$aspect_1-1: 100%;
+$aspect_16-9: 56.25%;
+$aspect_4-3: 75%;
+$aspect_3-2: 66.66%;
+$aspect_8-5: 62.5%;
+
+// Spacing
+$padding-std:2.5rem;
+
+// Breakpoints
+$bp1:500px;
+$bp2:1000px;
+
+// breakpoint mixins
+@mixin bp($breakpoint){
+  @media only screen and (max-width:$breakpoint) {
+      @content;
+  }
+}
+@mixin bp-plus($breakpoint){
+  @media only screen and (min-width:$breakpoint) {
+      @content;
+  }
+}
+
+// global anim
+@mixin darkenbgonhover($color){
+  @keyframes darkenbg{
+    from{
+      background-color:$color;
+    }
+    to{
+      background-color:darken($color, 5%);
+    }
+  }
+  @keyframes darkenbgrev{
+    from{
+      background-color:darken($color, 5%);
+    }
+    to{
+      background-color:$color;
+    }
+  }
+}
+
+// syled links
+@mixin link-styled{
+  padding: .4em;
+  @include text-blocky(inherit);
+  border-bottom: 1px solid $color-accent;
+}
+
+// text display
+@mixin text-display($font-size){
+  font-family: 'Lato', sans-serif;
+  font-weight:$extrabold;
+  font-size:$font-size;
+  line-height: 1.4;
+}
+
+// mobile text margin
+@mixin mobile-text-margin{
+  max-width:90vw;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+
+// center
+@mixin flex-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+// button
+@mixin button($color, $background){
+  border-radius: 0;
+  border:none;
+  cursor: pointer;
+  color:$color;
+  background-color:$background;
+  text-transform:uppercase;
+  display:block;
+  font-size:inherit;
+  line-height:1.4;
+  letter-spacing:.01em;
+  transition:background-color .2s;
+  text-align:center;
+  &:hover, &:active{
+    background-color:darken($background, 10%);
+  }
+  &--invert{
+    background-color:$color;
+    color:$background;
+  }
+  &--wide {
+    width: 100%;
+  }
+}
+
+// Turn button into inline link
+@mixin button-inline{
+  border-radius: 0;
+  border:none;
+  display:inline;
+  padding:0;
+  font-family:inherit;
+  cursor:pointer;
+  color:$link-color;
+}
+
+
+///////// CLASSES ////////////////////////////////////////////////////////////////////////
+
+// html
+html {
+  font-family: $font-brand, $font-std;
+  font-size:$font-size-base;
+}
+
+// body
+body {
+  font-size:$font-size-std;
+  line-height:$line-height;
+}
+
+// resets
+input, textarea, select, button{
+  font-size:inherit;
+}
+
+// resets
+p, ul, ol{
+  padding:0;
+  margin:0;
+  line-height:$line-height;
+  list-style:none;
+}
+
+// anchor
+a{
+  text-decoration: none;
+  color:inherit;
+  transition: color .5s;
+  &:hover{
+    color:$color-accent;
+  }
+}
+
+// headings
+h1, h2, h3, h4, h5{
+  font-size:$font-size-std;
+  font-weight:$font-weight-std;
+  margin:0;
+  padding:0;
+}
+
+// button
+.button{
+  @include button($black,$color-accent);
+}
+
+// main
+main{
+  margin:0 auto;
+  max-width:$site-width;
+  margin-top:$header-height;
+}
+
+// screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Turn button into inline link
+.button-inline{
+  @include button-inline;
+}
+

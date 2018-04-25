@@ -1,0 +1,13 @@
+.footer{
+	&__content{
+		@include text-tiny;
+		margin-left:25%;
+		span{
+			font-weight:$bold;
+		}
+		@include bp-minus($bp1){
+            margin-left:0;
+            width:100%;
+        }
+	}
+}
