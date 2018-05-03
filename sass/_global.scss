@@ -87,6 +87,9 @@ $line-height:1.7;
 // text body
 @mixin text-body{
   line-height:$line-height;
+  strong{
+    font-weight:$bold;
+  }
   h1, h2, h3, h4, h5{
     font-size:font-size-std;
     padding:0;
@@ -289,7 +292,7 @@ p, ul, ol{
 a{
   text-decoration: none;
   color:inherit;
-  transition: color .5s;
+  transition: color .3s;
   &:hover{
     color:$color-brand;
   }
@@ -304,6 +307,7 @@ h1, h2, h3, h4, h5{
 }
 
 // button
+
 .button{
   color:$black;
   font-weight:$bold;
@@ -312,6 +316,7 @@ h1, h2, h3, h4, h5{
   line-height:1.4;
   letter-spacing:.01em;
   //transition:color .2s;
+  cursor:pointer;
   span{
     padding-right:.5em;
     @include text-underline($color-brand);
@@ -325,6 +330,17 @@ h1, h2, h3, h4, h5{
     display:block;
     width:15px;
     height:15px;
+    &--right{
+    }
+    &--down{
+      transform:rotate(90deg);
+    }
+    &--left{
+      transform:rotate(180deg);
+    }
+    &--up{
+      transform:rotate(270deg);
+    }
   }
 }
 
@@ -344,5 +360,10 @@ h1, h2, h3, h4, h5{
 // Turn button into inline link
 .button-inline{
   @include button-inline;
+}
+
+// text no break
+.nobreak{
+  white-space: nowrap;
 }
 

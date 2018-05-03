@@ -16,6 +16,10 @@ header{
 		width:25%;
 		a{
 			color:$black-lighten;
+			transition: color .3s;
+		    &:hover{
+		      color:$color-brand;
+		    }
 		}
 	}
 	&__title{

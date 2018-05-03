@@ -2,6 +2,7 @@
 
 			<div class="panel__inner">
 
+
 					<div class="job__profile">
 						<div class="job__logo">
 							{{ include.logo }}
@@ -18,6 +19,7 @@
 					</div>
 
 					<div class="job__main-body">
+						<h2 class="sr-only">{{ include.company }}</h2>
 						<div class="job__about">
 							{{ include.content }}
 						</div>
@@ -42,16 +44,26 @@
 								    data: {
 								        labels: {{ include.chartlabels }},
 								        datasets: [{
-								            label: '# of Votes',
 								            data: {{ include.chartdata }},
-								            backgroundColor: 'rgba(235,63,63,.9)',
+								            backgroundColor: [
+								            'rgba(210,54,54,.8)',
+								            'rgba(210,54,54,1)',
+								            'rgba(210,54,54,.8)',
+								            'rgba(210,54,54,1)',
+								            'rgba(210,54,54,.8)',
+								            'rgba(210,54,54,1)'
+								            ],
 								            borderColor: '#f2f2f2',
-								            borderWidth: 6
+								            borderWidth: 4
 								        }]
 								    },
 								    options: {
 								        legend: {
 								            display: false
+								        },
+								        tooltips: {
+								        	enabled: true,
+								        	displayColors: false
 								        }
 								    }
 								});
@@ -62,14 +74,28 @@
 						</div>
 
 						<div class="job__tasks">
-						<h3 class="job__tasks-title">Tasks</h3>
-						<ul>
-							{{ include.tasks }}
-						</ul>
-					</div>
+							<h3 class="job__tasks-title">Tasks</h3>
+							<ul>
+								{{ include.tasks }}
+							</ul>
+						</div>
 
 
 					</div>
+
+
+			</div>
+
+
+			<div class="job__arrows job__arrows--prev" tabindex="0">
+				<svg class="button__icon button__icon--left">
+					<use xlink:href="#arrow" />
+				</svg>
+			</div>
+			<div class="job__arrows job__arrows--next" tabindex="0">
+				<svg class="button__icon button__icon--right">
+					<use xlink:href="#arrow" />
+				</svg>
 			</div>
 
 		</div>

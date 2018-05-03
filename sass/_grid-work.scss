@@ -106,8 +106,8 @@ $grid-space:36px;
     position:absolute;
     top:$grid-space;
     right:$grid-space;
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
     @include bp-minus($bp1){
       display:none;
     }

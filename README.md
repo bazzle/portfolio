@@ -1,3 +1,3 @@
-Princess Frederica School website
+Portfolio website
 Version 1
 Barry Richards

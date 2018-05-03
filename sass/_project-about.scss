@@ -1,5 +1,5 @@
 .project-about{
-    width:calc(75% - #{$grid-space});
+    width:calc(66.66% - #{$grid-space});
     @include bp-minus($bp2){
         width:calc(100% - #{$grid-space});
         margin-left:0;
@@ -13,17 +13,15 @@
         @include text-display(2em);
         padding-bottom:1em;
         a{
-            @include text-underline($color-brand);
+            //@include text-underline($color-brand);
         }
     }
     &__intro{
-        //padding-bottom:$text-padding-std;
         font-weight:$bold;
     }
     &__client{
         padding-bottom:$text-padding-std;
         font-weight:$bold;
-        //@include text-tiny;
     }
     &__description{
         @include text-body;

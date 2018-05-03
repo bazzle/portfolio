@@ -15,11 +15,11 @@
 				<div class="grid-work__item-panel-content">
 					<div class="cp project-about">
 						<div class="project-about__metadata">
-							<h1 class="project-about__title">
+							<h3 class="project-about__title">
 								<a href="{{ include.link }}">
 									{{ include.title }}
 								</a>
-							</h1>
+							</h3>
 							<p class="project-about__intro">
 								{{ include.intro }}
 							</p>
@@ -36,7 +36,7 @@
 								<span>
 									View project
 								</span>
-								<svg class="button__icon">
+								<svg class="button__icon button__icon--{{ include.direction }}">
 									<use xlink:href="#arrow" />
 								</svg>
 							</div>

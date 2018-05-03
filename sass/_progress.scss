@@ -50,7 +50,10 @@
   }
   &__item-title{
     font-weight:500;
-    //position:absolute;
+    transition: color .3s;
+    &:hover{
+      color:$color-brand;
+    }
   }
   &__item-date{
     color:$color-brand;
