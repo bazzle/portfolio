@@ -12,21 +12,12 @@ header{
 }
 
 .header{
-	&__logo{
-		width:25%;
-		a{
-			color:$black-lighten;
-			transition: color .3s;
-		    &:hover{
-		      color:$color-brand;
-		    }
-		}
-	}
 	&__title{
 		padding:1.2em 0;
 		font-weight:$bold;
+		margin-left:25%;
 		@include bp-minus($bp1){
-			margin-left:0;
+			margin-left:25%;
 		}
 	}
 }

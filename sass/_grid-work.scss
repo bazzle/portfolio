@@ -1,10 +1,10 @@
-$grid-space:36px;
+$grid-space:$text-padding-std /2;
 
 .grid-work{
-  background-color:white;
   width:100%;
   display:flex;
   justify-content:center;
+  padding-top:$grid-space;
   &__inner{
     width:100%;
     display:flex;
@@ -16,9 +16,9 @@ $grid-space:36px;
     }
   }
   &__item{
-    width:25%;
-    padding:0;
+    width:20%;
     padding-right:$grid-space;
+    padding-bottom:$grid-space;
     box-sizing:border-box;
     display:flex;
     flex-direction:column;
@@ -51,18 +51,6 @@ $grid-space:36px;
       min-height:100%;
       cursor:pointer;
       object-fit:cover;
-    }
-    &:before{
-      display:block;
-      z-index:1;
-      visibility:visible;
-      position:absolute;
-      bottom:-1px;
-      left:-1%;
-      content:'';
-      background-color:white;
-      width:101%;
-      height:$grid-space;
     }
   }
   &__item-text{
@@ -100,75 +88,6 @@ $grid-space:36px;
     @include bp-plus($bp2){
       width:75%;
       margin-left:25%;
-    }
-  }
-  &__item-panel-close{
-    position:absolute;
-    top:$grid-space;
-    right:$grid-space;
-    width:20px;
-    height:20px;
-    @include bp-minus($bp1){
-      display:none;
-    }
-  }
-  &__item{
-    &.open{
-      .grid-work__item-panel{
-        height:600px;
-        @include bp-minus($bp1){
-          height:auto;
-        }
-      }
-      .grid-work__item-panel-inner{
-        visibility:visible;
-        opacity:100;
-      }
-      .grid-work__item-image{
-        &:before{
-          z-index:1;
-          visibility:visible;
-          position:absolute;
-          bottom:-1px;
-          left:-1%;
-          content:'';
-          background-color:white;
-          width:51%;
-          height:$grid-space;
-          clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
-        }
-        &:after{
-          z-index:1;
-          visibility:visible;
-          position:absolute;
-          bottom:-1px;
-          right:-1%;
-          content:'';
-          background-color:white;
-          width:51%;
-          height:$grid-space;
-          clip-path: polygon(25px 0, 100% 0, 100% 100%, 0 100%);
-        }
-      }
-    }
-    &.close{
-      .grid-work__item-panel{
-        height:0;
-        transition:height .2s;
-        transition-delay: .3s;
-      }
-      .grid-work__item-panel-inner{
-        visibility:hidden;
-        opacity:0;
-      }
-      .grid-work__item-image{
-        &:before{
-          visibility:visible;
-        }
-        &:after{
-          display:none;
-        }
-      }
     }
   }
 }

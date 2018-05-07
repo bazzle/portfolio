@@ -11,87 +11,6 @@ function unlockview(){
 
 
 
-function grid(){
-
-  const container = document.querySelector('.grid-work__inner');
-  const items = document.querySelectorAll('.grid-work__item');
-
-  function closeall(arg){
-    arg.forEach(function(e){
-      e.classList.remove('open');
-      e.classList.add('close');
-    });
-  };
-  function openthis(arg){
-    arg.classList.remove('close');
-    arg.classList.add('open');
-  };
-
-  items.forEach(function(i){
-    let image = i.querySelector('.grid-work__item-image');
-    let closebutton = i.querySelector('.grid-work__item-panel-close');
-    let panelopen;
-    let actionopen = () => {
-      closeall(items);
-      openthis(i);
-    }
-    let actionclose = () => {
-      closeall(items);
-    }
-    image.addEventListener('click', function(){
-      if (i.classList.contains('open') ){
-        actionclose();
-      } else {
-        actionopen();
-      }
-    });
-    closebutton.addEventListener('click', function(){
-      actionclose();
-    });
-  });
-
-  document.addEventListener('keydown',function(i){
-    if ( i.key == "Escape" ){
-        closeall(items);
-    };
-  })
-
-};
-
-
-function gridallopen(){
-  const items = document.querySelectorAll('.grid-work__item');
-  items.forEach(function(i){
-    i.classList.remove('close');
-    i.classList.add('open');
-  });
-};
-
-function enableimagemobile(){
-  let link = document.querySelectorAll('.work-image-link');
-  link.forEach(function(e){
-    function dothis(evt){
-      evt.preventDefault();
-    };
-    if (matchMedia) {
-      mq2.addListener(WidthChangesenableimagemobile);
-      WidthChangesenableimagemobile(mq2);
-    };
-    function WidthChangesenableimagemobile(mq2){
-      if (mq2.matches) {
-        // if mobile
-        $(e).off('click', dothis);
-      } else {
-        // if dt
-        $(e).on('click', dothis);
-      };
-    };
-  });
-};
-
-
-
-
 
 
 
@@ -413,13 +332,3 @@ let progressline = document.querySelector('.progress__items');
 if ( !(progressline == null) ){
   careerprogress();
 }
-
-enableimagemobile();
-
-if (matchMedia) {
-  if (mq.matches) {
-    grid();
-  } else {
-    gridallopen();
-  };
-};
