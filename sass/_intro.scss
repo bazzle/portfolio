@@ -10,8 +10,10 @@
 		width:50%;
 		@include text-display(3em);
 		@include text-underline($color-brand);
+		@include bp-minus($bp3){
+			@include text-display(2em);
+		}
 		@include bp-minus($bp2){
-			@include text-display(2.4em);
 			margin-left:0;
 			width:90%;
 		}

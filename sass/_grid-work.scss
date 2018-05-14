@@ -1,10 +1,13 @@
 $grid-space:$text-padding-std /2;
 
 .grid-work{
+  background-color:$white;
   width:100%;
   display:flex;
   justify-content:center;
   padding-top:$grid-space;
+  padding-left:$grid-space;
+  padding-right:0;
   &__inner{
     width:100%;
     display:flex;
@@ -24,7 +27,6 @@ $grid-space:$text-padding-std /2;
     flex-direction:column;
     @include bp-minus($bp1){
       width:100%;
-      padding-right:0;
     }
   }
   &__item-title{

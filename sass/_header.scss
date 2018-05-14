@@ -16,8 +16,8 @@ header{
 		padding:1.2em 0;
 		font-weight:$bold;
 		margin-left:25%;
-		@include bp-minus($bp1){
-			margin-left:25%;
+		@include bp-minus($bp2){
+			margin-left:0;
 		}
 	}
 }

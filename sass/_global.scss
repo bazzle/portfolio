@@ -71,6 +71,9 @@ $line-height:1.7;
   font-weight:$extrabold;
   font-size:$font-size;
   line-height: 1.4;
+  p{
+    line-height: 1.4;
+  }
 }
 
 @mixin intro-text{
