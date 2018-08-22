@@ -1,0 +1,30 @@
+.pagination{
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	&__back{
+		width:100%;
+		font-size:1.4em;
+		@include bp-minus($bp1){
+			padding-bottom:$text-padding-std;
+		}
+		@include bp($bp1){
+			width:25%;
+		}
+		a{
+			@include text-underline($color-brand);
+		}
+	}
+	&__next-item{
+		width:100%;
+		font-size:1.4em;
+		@include bp($bp1){
+			width:75%;
+		}
+		a{
+			@include text-underline($color-brand);
+		}
+		span{
+		}
+	}
+}

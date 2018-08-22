@@ -6,20 +6,80 @@
 	}
 	&__banner{
 		width:100%;
-		height:auto;
+		height:400px;
+		@include bp($bp1){
+			height:calc(90vh - 60px);
+		}
 		img{
 			width:100%;
-			height:auto;
+			height:100%;
 			object-fit:cover;
+			&.left-top{
+				object-position:0 0;
+			}
+			&.left-center{
+				object-position:0 50%;
+			}
+			&.left-bottom{
+				object-position:0 100%;
+			}
+			&.center-top{
+				object-position:50% 0;
+			}
+			&.center-center{
+				object-position:50% 50%;
+			}
+			&.center-bottom{
+				object-position:50% 100%;
+			}
+			&.right-top{
+				object-position:100% 0;
+			}
+			&.right-center{
+				object-position:100% 50%;
+			}
+			&.right-bottom{
+				object-position:100% 100%;
+			}
 		}
 	}
+	&__title{
+		&.image{
+			border-bottom:$border-feint;
+		}
+		border-top:$border-feint;
+		padding-top:$text-padding-std*2;
+		padding-bottom:$text-padding-std*3;
+		height:auto;
+		padding-top:$text-padding-std;
+		padding-bottom:$text-padding-std;
+		@include bp($bp1){
+			display:flex;
+			height:10vh;
+			padding:0;
+		}
+        background-color:$white;
+    }
+    &__title-inner{
+    	@include col-std(75%);
+    }
+    &__title-main{
+        @include text-display(2em);
+        display:inline-block;
+    }
+    &__title-client{
+        @include text-display(2em);
+        color:rgba($black,.4);
+    }
 	&__main{
 		width:100%;
 		@include text-body;
-		display:flex;
-		flex-direction:column;
-		align-items:center;
-		justify-content:space-between;
+		@include text-leadin(1.4em);
+		p{
+			&:last-of-type{
+				margin-bottom:0;
+			}
+		}
 		img{
 			width:100%;
 			height:auto;
@@ -28,35 +88,24 @@
 			@include bp-minus($bp1){
 				margin:$text-padding-std 0;
 			}
+			&:first-of-type{
+				margin-top:0;
+			}
 			&:last-of-type{
-				margin-bottom:$text-padding-std*3;
-				@include bp-minus($bp1){
-					margin:$text-padding-std 0;
+				@include bp($bp1){
+					margin-bottom:$text-padding-std*6;
 				}
 			}
 		}
 	}
 	&__main-snippet{
 		width:100%;
-		margin:$text-padding-std*3 0;
-		p{
-			margin:0 auto;
-			margin-bottom:$text-padding-std;
-			text-align:center;
-			width:100%;
-			max-width:800px;
-			font-size:1.4em;
-			&:last-of-type{
-				margin-bottom:0;
-			}
-		}
+		@include col-std(50%);
 	}
 	&__about{
-		width:100%;
-		@include bp-plus($bp1){
-			width:75%;
-			margin-left:25%;
-		}
+		padding-top:$text-padding-std*2;
+		padding-bottom:$text-padding-std*3;
+		@include col-std(75%);
 	}
 	&__image-inner{
 		cursor:pointer;
@@ -76,21 +125,5 @@
 			object-fit:cover;
 		}
 	}
-	&__back{
-		width:100%;
-		@include bp-plus($bp1){
-			width:25%;
-		}
-	}
-	&__next-item{
-		width:100%;
-		@include bp-plus($bp1){
-			width:75%;
-		}
-		span{
-			color:darken($white, 20);
-		}
-	}
-
 
 }

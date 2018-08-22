@@ -1,0 +1,42 @@
+.menu{
+	position:fixed;
+	width:100vw;
+	height:calc( 100vh - #{$header-height} );
+	background-color:$white;
+	visibility:hidden;
+	opacity:0;
+	transition:all, .2s;
+	&.visible{
+		visibility:visible;
+		opacity:1;
+	}
+}
+
+.main-menu{
+	height:calc( 100vh - #{$header-height} );
+	width:100%;
+	position:relative;
+	@include col-std(50%);
+	@include align-left;
+	&__list{
+		display:block;
+		width:100%;
+		li{
+			padding:0;
+			margin:0;
+			@include bp-minus($bp1){
+				margin-top:.5em;
+				margin-bottom:.5em;
+			}
+			&:first-of-type{
+				margin-bottom:2em;
+			}
+			a{
+				@include bp($bp1){
+					font-size:2em;
+				}
+				@include text-underline($color-brand);
+			}
+		}
+	}
+}

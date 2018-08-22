@@ -1,0 +1,44 @@
+{% if page.layout == 'home' %}
+   
+{% include grid-item.html
+	image="home-grid_data-viz"
+	image-alt="Data Visualisation tips cards stacked"
+	image-ext="png"
+	title="Data Visualization Tips"
+	intro="Landing page design and build for Data Visualization campaign"
+	client="Geckoboard"
+	link="/data-visualization-tips/"
+%}
+
+{% else %}
+
+{% include work-item.html
+	bgcolor="#f9f9f9"
+	image="thumbs-afl.png"
+	image-alt="Apartments for London"
+	title="Data Visualization Tips"
+	intro="Landing page design and build for Data Visualization campaign"
+	client="Geckoboard"
+	link="/data-visualization-tips/"
+	banner-image="data-viz-banner.jpg"
+	banner-image-alt="St James&rsquo;s Square local area signage"
+	description="
+		<p>
+			At Geckoboard, the resident data science writer, Aspasia wanted to create a campaign to help educate designers about how to present data the proper way, and the pitfalls to avoid that could misrepresent data.
+		</p>
+		<p>
+			The campaign took the form of a poster, individual cards, social media posts and the landing page. I worked in tandem with the in-house web designer in the design and build.
+		</p>
+		<p>
+			We commissioned talented illustrator Eve Lloyd Knight to produce the graphics.
+		</p>
+	"
+	content-main="
+		<img src='/assets/images/projects/data-viz-home.png' alt='data-visualization landing page' />
+		<img src='/assets/images/projects/data-viz-devices-1.jpg' alt='data-visualization landing page on devices' />
+	"
+	next-item-link="<a href='/located/'>LocatED</a>"
+%}
+
+{% endif %}
+

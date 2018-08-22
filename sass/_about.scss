@@ -8,18 +8,22 @@
 			padding-right:0;
 		}
 	}
+	&__snippet{
+		padding-bottom:1.5em;
+		@include text-leadin(1.4em);
+	}
 	&__statement{
 		@include text-body;
 	}
 	&__leadin{
-		@include intro-text;
+		@include text-leadin(1.4em);
 	}
 	&__question{
 		font-weight:$bold;
 	}
 	&__profile{
 		width:25%;
-		padding-right:$grid-space;
+		@include align-center-top;
 		@include bp-minus($bp1){
 			width:100%;
 		}
@@ -57,10 +61,10 @@
 		}
 	}
 	&__sidebar{
-		width:25%;
-		padding-left:$grid-space;
-		@include bp-minus($bp1){
-			width:100%;
+		width:100%;
+		@include bp($bp1){
+			width:25%;
+			padding-left:$grid-space;
 		}
 	}
 	&__abilities{
@@ -83,81 +87,22 @@
 		font-weight: $bold;
 		padding-bottom:1em;
 	}
-	@keyframes show{
-		0%{
-			opacity:0;
-			height:0;
-		}
-		50%{
-			height:600px;
-			opacity:0;
-		}
-		100%{
-			opacity:1;
-			height:600px;
-		}
-	}
-	@keyframes hide{
-		0%{
-			opacity:1;
-			height:525px;
-		}
-		50%{
-			opacity:0;
-			height:525px;
-		}
-		100%{
-			height:0;
-			opacity:0;
-		}
-	}
-	@keyframes quoteshow{
-		0%{
-			opacity:0;
-			height:0;
-		}
-		50%{
-			opacity:0;
-		}
-		100%{
-			opacity:1;
-			height:200px;
-		}
-	}
-	@keyframes quotehide{
-		0%{
-			opacity:1;
-			height:200px;
-		}
-		50%{
-			opacity:1;
-		}
-		100%{
-			opacity:0;
-			height:0;
-		}
+	&__readmore{
 	}
 	&__more{
 		opacity:0;
 		height:0;
 		overflow:hidden;
-		&--show{
-			animation-name:show;
-			animation-duration:1s;
-			animation-fill-mode: forwards;
-			animation-delay:0;
-		}
-		&--hide{
-			animation-name:hide;
-			animation-duration:1s;
-			animation-fill-mode: backwards;
-			animation-delay:0;
+		transition:all, .6s;
+		&.js-show{
+			opacity:1;
+			height:auto;
 		}
 	}
 	&__quote{
 		margin-top:1em;
 		margin-bottom:1em;
-		@include intro-text;
+		@include text-leadin(1.4em);
 		position:relative;
 		width:100%;
 		opacity:0;
@@ -170,22 +115,15 @@
 		@include bp-minus($bp1){
 			display:none;
 		}
-		&--show{
-			animation-name:quoteshow;
-			animation-duration:1s;
-			animation-fill-mode: forwards;
-			animation-delay:0;
-		}
-		&--hide{
-			animation-name:quotehide;
-			animation-duration:1s;
-			animation-fill-mode: backwards;
-			animation-delay:0;
+		transition:all, .6s;
+		&.js-show{
+			opacity:1;
+			height:auto;
 		}
 	}
 	&__quotemark{
 		position:absolute;
-		top:-.4em;
+		top:-.2em;
 		left:-52px;
 		color:$color-brand;
 		font-size:4em;

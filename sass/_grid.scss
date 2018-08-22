@@ -1,4 +1,6 @@
-
+body{
+  padding-top:$header-height;
+}
 
 .row{
   width:100vw;
@@ -10,7 +12,7 @@
     padding-right:5vw;
   }
   max-width:$site-width;
-  margin:0 auto;
+  margin:0 auto;  
   display:flex;
   align-items:center;
   flex-wrap:wrap;
@@ -154,7 +156,7 @@
 
 
 main{
-  @include bp($bp1){
-    margin-top:$header-height;
+  @include bp-minus($bp1){
+    //margin-top:$header-height;
   }
 }

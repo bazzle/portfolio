@@ -1,31 +1,23 @@
 .snippet{
 	@include align-left;
 	width:100%;
-	padding-top:4em;
-	padding-bottom:4em;
+	padding-top:$text-padding-std*3;
+	padding-bottom:$text-padding-std*4;
 	position:relative;
 	@include bp-minus($bp2){
 		padding-top:2em;
 		padding-bottom:2em;
 	}
 	&__statement{
-		margin-left:25%;
-		width:50%;
-		@include bp-minus($bp2){
-			margin-left:0;
-			width:90%;
-		}
+		@include col-std(40%);
 	}
 	&__main{
-		@include text-display(2em);
+		@include text-leadin(1.4em);
 		@include text-underline($color-brand);
-		@include bp-minus($bp2){
-			@include text-display(2em);
-		}
 	}
 	&__links{
-		padding:$text-padding-std 0;
-		@include intro-text;
+		padding-top:$text-padding-std;
+		@include text-leadin(1.4em);
 		@include bp-minus($bp1){
 		}
 		a{

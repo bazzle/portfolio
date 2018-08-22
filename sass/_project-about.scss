@@ -7,24 +7,12 @@
     @include bp-minus($bp1){
         width:100%;
     }
-    &__metadata{
-    }
-    &__title{
-        @include text-display(2em);
-        padding-bottom:1em;
-        a{
-            //@include text-underline($color-brand);
-        }
-    }
     &__intro{
-        font-weight:$bold;
-    }
-    &__client{
-        padding-bottom:$text-padding-std;
-        font-weight:$bold;
+        padding-bottom:1.5em;
+        @include text-leadin(1.4em);
     }
     &__description{
         @include text-body;
-        padding-bottom:$text-padding-std;
+        //font-size:1.4em;
     }
 }

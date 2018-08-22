@@ -1,10 +1,31 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-{% include intro.html %}
-{% include work-index.html %}
-{% include snippet.html content="<p>I’m a creative minded designer and developer who is crazy about the user interface, and how it’s built.</p>" %}
-{% include about.html %}
-{% include career.html %}
-{% include snippet-contact.html %}
+<head>
+  {% include head.html %}
+</head>
+
+  <body id="homepage">
+    {% include dest.svg %}
+    <header class="header">
+        {% include header.html %}
+    </header>
+
+    
+    <main role="main">
+      {% include home_intro.html %}
+		  {% include home_work-index.html %}
+		  {% include home_about.html %}
+		  {% include home_career.html %}
+		  {% include home_contact.html %}
+    </main>
+
+    <footer>
+        {% include footer.html %}
+    </footer>
+
+    {% include scripts.html %}
+
+
+  </body>
+</html>

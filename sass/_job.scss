@@ -1,5 +1,4 @@
 .job{
-  padding-top:$text-padding-std;
   visibility: hidden;
   overflow:visible;
   opacity:0;
@@ -7,6 +6,10 @@
   height:0;
   transition: opacity .8s .8s;
   position:relative;
+  &__inner{
+    @extend .panel__inner;
+    padding:0;
+  }
   &__arrows{
     position:absolute;
     cursor:pointer;
@@ -17,11 +20,11 @@
       height:100%;
     }
     &--prev{
-      top:50%;
+      top:200px;
       left:-20px;
     }
     &--next{
-      top:50%;
+      top:200px;
       right:-20px;
     }
   }
@@ -34,7 +37,7 @@
   }
   &.job-show{
     width:100%;
-    min-height:40em;
+    min-height:30em;
     visibility: visible;
     opacity:1;
     width:100%;
@@ -74,8 +77,7 @@
     margin-bottom:$text-padding-std;
   }
   &__intro{
-    @include intro-text;
-    font-weight:$bold;
+    @include text-leadin(1.4em);
   }
   &__resp{
     width:25%;
