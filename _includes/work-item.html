@@ -1,4 +1,4 @@
-<article class="cp work-item" role="contentinfo" aria-label="article">
+<article class="cp work-item work-item--{{ include.bgcolor }}" role="contentinfo" aria-label="article">
 
 	{% if include.banner-image %}
 	<div class="panel panel-work-item-banner">
@@ -7,7 +7,8 @@
 		</div>
 	</div>
 	{% endif %}
-	<header class="work-item__title {% if include.banner-image %}image{% endif %}" >
+	<header class="work-item__title {% if include.banner-image %}image{% endif %}" 
+	{% if include.title-bg-color %}style="background-color:{{ include.title-bg-color }}; color:{{ include.title-text-color }};"{% endif %}>
 		<div class="row">
 			<div class="work-item__title-inner">
 				<h1 class="work-item__title-main">
@@ -20,7 +21,7 @@
 		</div>
 	</header>
 
-	<div class="panel panel-work-item-head" style="background-color:{{ include.bgcolor }}">
+	<div class="panel panel-work-item-head">
 		<div class="row">
 		<div class="work-item__head">
 
@@ -41,7 +42,7 @@
 	</div><!-- end panel --> 
 
 
-	<div class="panel panel-work-item-main" style="background-color:{{ include.bgcolor }}">
+	<div class="panel panel-work-item-main">
 		<div class="row">
 			<div class="work-item__main">
 				{{ include.content-main }}

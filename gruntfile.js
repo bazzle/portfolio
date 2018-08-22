@@ -15,18 +15,6 @@ module.exports = function(grunt) {
           src: 'css/main.css'
         }
       },
-      svgstore: {
-        options: {
-          svg: {
-            style: "display:none;"
-          }
-        },
-        default : {
-          files: {
-            '_includes/dest.svg': ['assets/svg/*.svg'],
-          }
-        }
-      },
       sass: {
         dist: {
           files: {
@@ -50,5 +38,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-purifycss');
-  grunt.loadNpmTasks('grunt-svgstore');
   };
