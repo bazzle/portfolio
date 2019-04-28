@@ -1,27 +1,49 @@
 .intro{
 	@include align-left;
-	width:100%;
 	position:relative;
-	padding-top:$text-padding-std*2;
-	padding-bottom:$text-padding-std*2;
+	padding-top:$text-padding-std*4;
+	padding-bottom:$text-padding-std*4;
 	@include bp($bp1){
 		box-sizing:content-box;
-		height:400px;
-		padding:0;
+		height:auto;
+		//padding-bottom:0;
+	}
+	&__title{
+		display:block;
+		text-align:center;
+		@include text-page-title;
+		margin-bottom:$text-padding-std;
 	}
 	&__inner{
-		@include col-std(50%);
+		width:100%;
+		margin:0 auto;
+		@include bp($bp1){
+			width:70%;
+		}
 	}
 	&__statement{
 		color:$black;
-		@include text-display(3em);
-		@include bp-minus($bp3){
-			@include text-display(2em);
-		}
+	  p{
+	  	@include text-leadin-large;
+	  	text-align:center;
+	    margin-bottom:$text-padding-std;
+	    &:last-of-type{
+	    	margin-bottom:0;
+	    }
+	  }
+	}
+	&__down-icon{
+		color:$black;
+		width:80px;
+		height:80px;
 	}
 	&__links{
 		padding-top:$text-padding-std;
-		@include text-leadin(1.4em);
+	  text-align:center;
+	  p{
+	    line-height: 1.4;
+	  }
+
 		@include bp-minus($bp1){
 		}
 		a{

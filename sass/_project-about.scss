@@ -9,10 +9,9 @@
     }
     &__intro{
         padding-bottom:1.5em;
-        @include text-leadin(1.4em);
+        @include text-leadin-large;
     }
     &__description{
         @include text-body;
-        //font-size:1.4em;
     }
 }

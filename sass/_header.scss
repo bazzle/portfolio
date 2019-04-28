@@ -17,8 +17,8 @@
 
 .header-main{
 	&__inner{
+		border-top:12px solid $color-brand;
 		height:$header-height;
-		@include col-std(50%);
 		@include align-left;
 		width:100%;
 	}

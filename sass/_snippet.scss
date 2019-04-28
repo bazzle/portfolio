@@ -12,12 +12,12 @@
 		@include col-std(40%);
 	}
 	&__main{
-		@include text-leadin(1.4em);
+		@include text-leadin;
 		@include text-underline($color-brand);
 	}
 	&__links{
 		padding-top:$text-padding-std;
-		@include text-leadin(1.4em);
+		@include text-leadin;
 		@include bp-minus($bp1){
 		}
 		a{

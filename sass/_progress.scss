@@ -39,10 +39,10 @@
   }
   &__marker{
     height:40px;
-    width:2px;
-    background-color:rgba($black, 0.4);
-    border-left:4px solid $white-darken;
-    border-right:4px solid $white-darken;
+    width:1px;
+    background-color:rgba($black, 0.8);
+    border-left:4px solid $white;
+    border-right:4px solid $white;
     position:absolute;
     top:0;
     left:calc(50% - 2px);

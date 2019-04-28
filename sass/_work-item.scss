@@ -63,11 +63,9 @@
     	@include col-std(75%);
     }
     &__title-main{
-        @include text-display(2em);
         display:inline-block;
     }
     &__title-client{
-        @include text-display(2em);
         color:rgba($black,.4);
     }
 	&__main{

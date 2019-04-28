@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+
+  require('load-grunt-tasks')(grunt);
   
     grunt.initConfig({
       postcss: {
@@ -18,24 +20,50 @@ module.exports = function(grunt) {
       sass: {
         dist: {
           files: {
-                'css/main.css': 'sass/main.scss'
-              }
+            'css/main.css': 'sass/main.scss'
+          }
+        }
+      },
+      svgmin: {
+        options: {
+          plugins: [
+            {
+              removeViewBox: true
+            },
+            {
+              removeUselessStrokeAndFill: true
+            },
+            {
+              cleanupIDs:false
+            },
+          ]
+        },
+        dist: {
+          files: {
+            'assets/svg/icons.svg': 'assets/svg/input/*.svg'
+          }
         }
       },
       watch: {
         sass: {
           files: ['sass/*.scss'],
           tasks: ['sass'],
-          options: {
-            livereload: 8080,
-          }
+         }
+      },
+      browserSync: {
+        bsFiles: {
+          src: ["_site/css/main.css", "_site/*.html"]
+        },
+        options: {
+          watchTask: true,
+          proxy: "http://localhost:4000"
         }
-      }
+      },
     });
+
+
+    grunt.registerTask("dev", ["browserSync", "watch"]);
+    grunt.registerTask('svg', ['svgmin']);
   
-  // Load grunt plugins.
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-purifycss');
+
   };

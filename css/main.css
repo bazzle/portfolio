@@ -5,8 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,700");
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500");
 html {
   line-height: 1.15;
   /* 1 */
@@ -299,6 +298,9 @@ template {
 [hidden] {
   display: none; }
 
+svg {
+  color: currentColor; }
+
 /*
 font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'Rubik', sans-serif;
@@ -320,8 +322,7 @@ html {
 
 body {
   font-size: 1.5rem;
-  line-height: 1.7;
-  background-color: #f2f2f2; }
+  line-height: 1.7; }
 
 input, textarea, select, button {
   font-size: inherit; }
@@ -398,7 +399,7 @@ h1, h2, h3, h4, h5 {
   white-space: nowrap; }
 
 body {
-  padding-top: 60px; }
+  padding-top: 80px; }
 
 .row {
   width: 100vw;
@@ -550,24 +551,20 @@ body {
     padding-top: 0;
     padding-bottom: 0; }
   .panel-intro {
-    background-color: #f2f2f2;
     color: #262626;
     position: relative;
-    height: auto;
     padding-top: 0;
-    padding-bottom: 0; }
-    .panel-intro__canvas {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
+    padding-bottom: 0;
+    height: calc(100vh - 80px);
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .panel-snippet {
     background-color: #ffffff;
     color: #262626; }
   .panel-snippet--contact {
-    background-color: #ffffff; }
+    background-color: #f2f2f2; }
   .panel-about {
     background-color: #ffffff; }
     @media only screen and (min-width: 750px) {
@@ -577,8 +574,6 @@ body {
   .panel-progress {
     color: #262626;
     background-color: #ffffff; }
-    .panel-progress .panel__inner, .panel-progress .job__inner {
-      background-color: #f2f2f2; }
     @media only screen and (max-width: 750px) {
       .panel-progress {
         display: none; } }
@@ -586,15 +581,6 @@ body {
     padding-top: 0;
     padding-bottom: 0;
     background-color: #ffffff; }
-    .panel-grid:before {
-      content: '';
-      width: 100%;
-      height: 50%;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #f2f2f2; }
   .panel-work-item-head {
     background-color: #f2f2f2; }
   .panel-work-item-banner {
@@ -608,8 +594,9 @@ body {
     padding-bottom: 6rem; }
   .panel-footer {
     padding-top: 6rem;
-    padding-bottom: 12rem;
-    background-color: #ffffff; }
+    padding-bottom: 6rem;
+    background-color: #262626;
+    color: #ffffff; }
   .panel--white-darken {
     background-color: #f2f2f2; }
 
@@ -618,7 +605,7 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  height: 60px;
+  height: 80px;
   width: 100%; }
   @media only screen and (max-width: 750px) {
     .header {
@@ -630,16 +617,12 @@ body {
       z-index: 10; } }
 
 .header-main__inner {
-  height: 60px;
-  width: 100%;
+  border-top: 12px solid #eb3f3f;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%; }
-  @media only screen and (min-width: 750px) {
-    .header-main__inner {
-      width: 50%;
-      margin-left: 25%; } }
 .header-main__title {
   font-weight: 500;
   flex-grow: 1; }
@@ -655,43 +638,42 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 6rem; }
+  padding-top: 12rem;
+  padding-bottom: 12rem; }
   @media only screen and (min-width: 750px) {
     .intro {
       box-sizing: content-box;
-      height: 400px;
-      padding: 0; } }
+      height: auto; } }
+  .intro__title {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 3rem; }
   .intro__inner {
-    width: 100%; }
+    width: 100%;
+    margin: 0 auto; }
     @media only screen and (min-width: 750px) {
       .intro__inner {
-        width: 50%;
-        margin-left: 25%; } }
+        width: 70%; } }
   .intro__statement {
-    color: #262626;
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-    font-size: 3em;
-    line-height: 1.4; }
+    color: #262626; }
     .intro__statement p {
-      line-height: 1.4; }
-    @media only screen and (max-width: 1500px) {
-      .intro__statement {
-        font-family: "Rubik", sans-serif;
-        font-weight: 500;
-        font-size: 2em;
-        line-height: 1.4; }
-        .intro__statement p {
-          line-height: 1.4; } }
+      font-size: 2em;
+      font-weight: 300;
+      line-height: 1.4;
+      text-align: center;
+      margin-bottom: 3rem; }
+      .intro__statement p:last-of-type {
+        margin-bottom: 0; }
+  .intro__down-icon {
+    color: #262626;
+    width: 80px;
+    height: 80px; }
   .intro__links {
     padding-top: 3rem;
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    font-size: 1.4em;
-    line-height: 1.4; }
+    text-align: center; }
     .intro__links p {
       line-height: 1.4; }
     .intro__links a {
@@ -736,23 +718,17 @@ body {
         width: 40%;
         margin-left: 25%; } }
   .snippet__main {
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4em;
     line-height: 1.4;
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     text-decoration-color: #eb3f3f; }
-    .snippet__main p {
-      line-height: 1.4; }
   .snippet__links {
     padding-top: 3rem;
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4em;
     line-height: 1.4; }
-    .snippet__links p {
-      line-height: 1.4; }
     .snippet__links a {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
@@ -777,7 +753,7 @@ body {
 .grid-work {
   margin: 0 auto;
   width: 100%;
-  padding-right: 0;
+  padding-bottom: 6rem;
   position: relative; }
   @media only screen and (min-width: 750px) {
     .grid-work {
@@ -788,7 +764,7 @@ body {
     margin: 0 auto;
     position: relative; }
   .grid-work__head, .grid-work__foot {
-    background-color: rgba(38, 38, 38, 0.05);
+    background-color: rgba(38, 38, 38, 0.02);
     height: 4em;
     width: 100%;
     display: flex;
@@ -796,25 +772,7 @@ body {
     justify-content: flex-start; }
     @media only screen and (min-width: 750px) {
       .grid-work__head, .grid-work__foot {
-        position: relative; }
-        .grid-work__head:before, .grid-work__foot:before {
-          content: '';
-          width: 4em;
-          height: 4em;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: #f2f2f2; }
-        .grid-work__head:after, .grid-work__foot:after {
-          content: '';
-          width: 4em;
-          height: 4em;
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          background-color: #f2f2f2; } }
+        position: relative; } }
   .grid-work__foot {
     background-color: rgba(38, 38, 38, 0.05); }
   .grid-work__title {
@@ -827,26 +785,9 @@ body {
         width: 75%;
         margin-left: 25%; } }
   .grid-work__grid {
-    position: relative;
-    width: 100%;
-    height: 100%; }
-    .grid-work__grid:after {
-      content: '';
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 159%;
-      z-index: -1; }
-      @media only screen and (max-width: 750px) {
-        .grid-work__grid:after {
-          display: none; } }
+    box-shadow: 0 4px 4px rgba(38, 38, 38, 0.3); }
   .grid-work__items {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    right: 0;
+    position: relative;
     top: 0;
     bottom: 0; }
     @media only screen and (max-width: 750px) {
@@ -951,15 +892,9 @@ body {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
-      font-family: "Rubik", sans-serif;
-      font-weight: 500;
-      font-size: 2em;
-      line-height: 1.4;
       text-align: center;
       white-space: nowrap;
       color: #262626; }
-      .grid-work__meta-inner span p {
-        line-height: 1.4; }
 
 .coming-soon {
   display: block;
@@ -982,14 +917,8 @@ body {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
-      font-family: "Rubik", sans-serif;
-      font-weight: 500;
-      font-size: 2em;
-      line-height: 1.4;
       text-align: center;
       white-space: nowrap; }
-      .coming-soon__inner span p {
-        line-height: 1.4; }
 
 .project-about {
   width: calc(66.66% - 3rem); }
@@ -1002,12 +931,9 @@ body {
       width: 100%; } }
   .project-about__intro {
     padding-bottom: 1.5em;
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    font-size: 1.4em;
+    font-size: 2em;
+    font-weight: 300;
     line-height: 1.4; }
-    .project-about__intro p {
-      line-height: 1.4; }
   .project-about__description {
     line-height: 1.7; }
     .project-about__description strong {
@@ -1047,12 +973,9 @@ body {
       padding-right: 0; } }
 .about__snippet {
   padding-bottom: 1.5em;
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.4em;
   line-height: 1.4; }
-  .about__snippet p {
-    line-height: 1.4; }
 .about__statement {
   line-height: 1.7; }
   .about__statement strong {
@@ -1082,12 +1005,9 @@ body {
     margin-bottom: 0;
     padding-bottom: 0; }
 .about__leadin {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.4em;
   line-height: 1.4; }
-  .about__leadin p {
-    line-height: 1.4; }
 .about__question {
   font-weight: 500; }
 .about__profile {
@@ -1158,8 +1078,7 @@ body {
 .about__quote {
   margin-top: 1em;
   margin-bottom: 1em;
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.4em;
   line-height: 1.4;
   position: relative;
@@ -1167,8 +1086,6 @@ body {
   opacity: 0;
   height: 0;
   transition: all, .6s; }
-  .about__quote p {
-    line-height: 1.4; }
   .about__quote span {
     width: 100%;
     display: block; }
@@ -1221,10 +1138,10 @@ body {
       flex-grow: 1; }
   .progress__marker {
     height: 40px;
-    width: 2px;
-    background-color: rgba(38, 38, 38, 0.4);
-    border-left: 4px solid #f2f2f2;
-    border-right: 4px solid #f2f2f2;
+    width: 1px;
+    background-color: rgba(38, 38, 38, 0.8);
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
     position: absolute;
     top: 0;
     left: calc(50% - 2px);
@@ -1305,12 +1222,9 @@ body {
   .job p {
     margin-bottom: 3rem; }
   .job__intro {
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4em;
     line-height: 1.4; }
-    .job__intro p {
-      line-height: 1.4; }
   .job__resp {
     width: 25%;
     margin-left: 3rem; }
@@ -1386,21 +1300,9 @@ body {
       width: 75%;
       margin-left: 25%; } }
 .work-item__title-main {
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  font-size: 2em;
-  line-height: 1.4;
   display: inline-block; }
-  .work-item__title-main p {
-    line-height: 1.4; }
 .work-item__title-client {
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  font-size: 2em;
-  line-height: 1.4;
   color: rgba(38, 38, 38, 0.4); }
-  .work-item__title-client p {
-    line-height: 1.4; }
 .work-item__main {
   width: 100%; }
   .work-item__main img {
@@ -1516,11 +1418,8 @@ body {
       text-decoration-color: #eb3f3f; }
 
 .footer__content {
-  color: #595959;
   font-size: .8em;
   width: 100%; }
-  .footer__content span {
-    font-weight: 500; }
   @media only screen and (min-width: 750px) {
     .footer__content {
       width: 75%;
@@ -1529,7 +1428,7 @@ body {
 .menu {
   position: fixed;
   width: 100vw;
-  height: calc( 100vh - 60px );
+  height: calc( 100vh - 80px );
   background-color: #ffffff;
   visibility: hidden;
   opacity: 0;
@@ -1539,7 +1438,7 @@ body {
     opacity: 1; }
 
 .main-menu {
-  height: calc( 100vh - 60px );
+  height: calc( 100vh - 80px );
   width: 100%;
   position: relative;
   width: 100%;

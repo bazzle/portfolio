@@ -10,13 +10,13 @@
 	}
 	&__snippet{
 		padding-bottom:1.5em;
-		@include text-leadin(1.4em);
+		@include text-leadin;
 	}
 	&__statement{
 		@include text-body;
 	}
 	&__leadin{
-		@include text-leadin(1.4em);
+		@include text-leadin;
 	}
 	&__question{
 		font-weight:$bold;
@@ -102,7 +102,7 @@
 	&__quote{
 		margin-top:1em;
 		margin-bottom:1em;
-		@include text-leadin(1.4em);
+		@include text-leadin;
 		position:relative;
 		width:100%;
 		opacity:0;

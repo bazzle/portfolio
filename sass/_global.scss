@@ -43,17 +43,15 @@ font-family: 'Rubik', sans-serif;
 // fonts
 $font-brand:'Rubik', sans-serif;
 $font-std:'Rubik', sans-serif;
-$font-display:'Rubik', sans-serif;
 
 // font-size;
 $font-size-base:62.5%;
 $font-size-std:1.5rem;
 
 // font weights
-$thin:400;
+$thin:300;
 $std:400;
 $bold:500;
-$extrabold:500;
 
 // font margins
 $text-padding-std:3rem;
@@ -68,29 +66,33 @@ $line-height:1.7;
     text-decoration-color: $color;
 }
 
-// text display
-@mixin text-display($font-size){
-  font-family:$font-display;
-  font-weight:$bold;
-  font-size:$font-size;
-  line-height: 1.4;
+@mixin text-intro{
+  font-weight:$thin;
+  font-size:2em;
+  line-height:2;
   p{
     line-height: 1.4;
   }
 }
 
-@mixin text-leadin($font-size){
-  font-family:$font-display;
-  font-weight:$std;
-  font-size:$font-size;
+@mixin text-page-title{
+  font-size:2em;
+  font-weight:$bold;
+}
+
+@mixin text-leadin-large{
+  font-size:2em;
+  font-weight:$thin;
   line-height: 1.4;
-  p{
-    line-height: 1.4;
-  }
+}
+
+@mixin text-leadin{
+  font-weight:$bold;
+  font-size:1.4em;
+  line-height:1.4;
 }
 
 @mixin text-tiny{
-    color:$black-lighten;
     font-size:.8em;
 }
 
@@ -270,10 +272,6 @@ $padding-std:2.5rem;
     justify-conten:flex-end;
 }
 
-// Header height
-
-$header-height:60px;
-
 
 ///////// RESET ////////////////////////////////////////////////////////////////////////
 
@@ -306,7 +304,6 @@ html {
 body {
   font-size:$font-size-std;
   line-height:$line-height;
-  background-color:$white-darken;
 }
 
 // resets

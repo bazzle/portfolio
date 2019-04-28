@@ -9,6 +9,6 @@ url: ""
 # Build settings
 markdown: kramdown
 port: 4000
-livereload: true
+livereload: false
 
 include: ["_pages"]

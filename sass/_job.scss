@@ -77,7 +77,7 @@
     margin-bottom:$text-padding-std;
   }
   &__intro{
-    @include text-leadin(1.4em);
+    @include text-leadin;
   }
   &__resp{
     width:25%;

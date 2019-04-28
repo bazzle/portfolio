@@ -13,7 +13,6 @@
 		overflow:visible;
 		span{
 			@include text-underline($color-brand);
-			@include text-display(2em);
 			text-align:center;
 			white-space: nowrap;
 		}

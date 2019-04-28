@@ -3,7 +3,7 @@ $grid-space:$text-padding-std;
 .grid-work{
   margin:0 auto;
   width:100%;
-  padding-right:0;
+  padding-bottom:$text-padding-std*2;
   position:relative;
   @include bp($bp1){
     position:relative;
@@ -16,32 +16,12 @@ $grid-space:$text-padding-std;
   }
   &__head{
     $size:4em;
-    background-color:rgba($black,.05);
+    background-color:rgba($black,.02);
     height:$size;
     width:100%;
     @include align-left;
     @include bp($bp1){
       position:relative;
-      &:before{
-        content:'';
-        width:$size;
-        height:$size;
-        display:block;
-        position:absolute;
-        top:0;
-        left:0;
-        background-color:$white-darken;
-      }
-      &:after{
-        content:'';
-        width:$size;
-        height:$size;
-        display:block;
-        position:absolute;
-        top:0;
-        right:0;
-        background-color:$white-darken;
-      }
     }
   }
   &__foot{
@@ -55,28 +35,10 @@ $grid-space:$text-padding-std;
     font-weight:$bold;
   }
   &__grid{
-    position:relative;
-    width:100%;
-    height:100%;
-    &:after{
-      content:'';
-      display:block;
-      position:relative;
-      width:100%;
-      height:0;
-      padding-bottom:159%;
-      z-index:-1;
-      @include bp-minus($bp1){
-        display:none;
-      }
-    }
+    box-shadow:0 4px 4px rgba($black, .3);
   }
   &__items{
-    position:absolute;
-    width:100%;
-    height:100%;
-    left:0;
-    right:0;
+    position:relative;
     top:0;
     bottom:0;
     @include bp-minus($bp1){
@@ -196,7 +158,6 @@ $grid-space:$text-padding-std;
     overflow:visible;
     span{
       @include text-underline($color-brand);
-      @include text-display(2em);
       text-align:center;
       white-space: nowrap;
       color:$black;

@@ -1,9 +1,6 @@
 .footer{
 	&__content{
 		@include text-tiny;
-		span{
-			font-weight:$bold;
-		}
 		@include col-std(75%);
 	}
 }
