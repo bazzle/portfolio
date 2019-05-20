@@ -301,16 +301,14 @@ template {
 svg {
   color: currentColor; }
 
-svg {
-  fill: currentColor; }
-
 /*
 font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'Rubik', sans-serif;
 */
 html, body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 *,
 *::before,
@@ -319,13 +317,17 @@ html, body {
   margin: 0;
   padding: 0; }
 
+svg {
+  fill: currentColor; }
+
 html {
   font-family: "Rubik", sans-serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  color: #444444; }
 
 body {
   font-size: 1.5rem;
-  line-height: 1.7; }
+  line-height: 1.5; }
 
 input, textarea, select, button {
   font-size: inherit; }
@@ -333,7 +335,7 @@ input, textarea, select, button {
 p, ul, ol {
   padding: 0;
   margin: 0;
-  line-height: 1.7;
+  line-height: 1.5;
   list-style: none; }
 
 a {
@@ -515,6 +517,7 @@ body {
   overflow-y: hidden;
   position: relative; }
   .panel__inner {
+    padding-top: 6rem;
     width: 100%; }
     @media only screen and (min-width: 1000px) {
       .panel__inner {
@@ -539,10 +542,13 @@ body {
     padding-bottom: 6rem;
     font-weight: 500;
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 1.2em;
     line-height: 1.2;
     width: 100%;
     width: 100%; }
+    @media only screen and (min-width: 1000px) {
+      .panel__inside-title {
+        font-size: 2rem; } }
     @media only screen and (min-width: 1000px) {
       .panel__inside-title {
         width: 75%;
@@ -573,23 +579,9 @@ body {
     background-color: #f2f2f2; }
   .panel-about {
     background-color: #ffffff; }
-    .panel-about .panel__inner {
-      padding-top: 6rem;
-      padding-bottom: 3rem; }
-      @media only screen and (min-width: 1000px) {
-        .panel-about .panel__inner {
-          padding-top: 12rem;
-          padding-bottom: 12rem; } }
   .panel-progress {
     color: #262626;
     background-color: #ffffff; }
-    .panel-progress .panel__inner {
-      padding-top: 6rem;
-      padding-bottom: 6rem; }
-      @media only screen and (min-width: 750px) {
-        .panel-progress .panel__inner {
-          padding-top: 12rem;
-          padding-bottom: 12rem; } }
   .panel-grid {
     padding-top: 0;
     padding-bottom: 0;
@@ -630,12 +622,14 @@ body {
       z-index: 10; } }
 
 .header-main__inner {
-  border-top: 12px solid #eb3f3f;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%; }
+  @media only screen and (min-width: 750px) {
+    .header-main__inner {
+      border-top: 12px solid #eb3f3f; } }
 .header-main__title {
   font-weight: 500;
   flex-grow: 1; }
@@ -674,16 +668,17 @@ body {
       .intro__inner {
         width: 70%; } }
   .intro__statement {
-    color: #262626;
     padding-bottom: 3rem; }
     .intro__statement p {
-      font-size: 1.1em;
-      font-weight: 300;
-      line-height: 1.4;
+      font-weight: 400;
+      font-size: 2.3rem;
+      line-height: 1.2;
       text-align: center;
       margin-bottom: 3rem; }
-      @media only screen and (min-width: 750px) {
+      @media only screen and (min-width: 1000px) {
         .intro__statement p {
+          line-height: 1.4;
+          font-weight: 300;
           font-size: 3rem; } }
       .intro__statement p:last-of-type {
         margin-bottom: 0; }
@@ -699,19 +694,18 @@ body {
     width: 100%;
     padding-bottom: 3rem;
     text-align: center;
-    font-weight: 500;
-    font-size: 1.4em;
-    line-height: 1.2;
     display: flex;
     justify-content: center;
     align-items: center; }
-    .intro__links p {
-      line-height: 1.4; }
+    @media only screen and (min-width: 1000px) {
+      .intro__links p {
+        line-height: 1.4; } }
     .intro__links a {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
-      font-weight: 500;
+      font-size: 2.5rem;
+      font-weight: 400;
       padding: .5em; }
     .intro__links span {
       padding: 0 1em;
@@ -730,13 +724,15 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding-top: 9rem;
-  padding-bottom: 12rem;
   position: relative; }
-  @media only screen and (max-width: 1000px) {
-    .snippet {
-      padding-top: 2em;
-      padding-bottom: 2em; } }
+  .snippet__title {
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 3rem; }
+    @media only screen and (min-width: 1000px) {
+      .snippet__title {
+        font-size: 2.3rem; } }
   .snippet__statement {
     width: 100%; }
     @media only screen and (min-width: 1000px) {
@@ -744,28 +740,31 @@ body {
         width: 40%;
         margin-left: 25%; } }
   .snippet__main {
-    font-weight: 500;
-    font-size: 1.4em;
-    line-height: 1.2;
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     text-decoration-color: #eb3f3f; }
   .snippet__links {
-    padding-top: 3rem;
-    font-weight: 500;
-    font-size: 1.4em;
-    line-height: 1.2; }
+    width: 100%;
+    padding-bottom: 3rem;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    @media only screen and (min-width: 1000px) {
+      .snippet__links {
+        padding-bottom: 0; }
+        .snippet__links p {
+          line-height: 1.4; } }
     .snippet__links a {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
-      font-weight: 500; }
-      @media only screen and (max-width: 750px) {
-        .snippet__links a {
-          display: block;
-          padding-bottom: .5em; } }
-      .snippet__links a:last-of-type {
-        padding-bottom: 0; }
+      font-size: 2.5rem;
+      font-weight: 400;
+      padding: .5em; }
+      .snippet__links a:first-of-type {
+        padding-left: 0; }
     .snippet__links span {
       padding: 0 1em;
       color: #595959;
@@ -894,6 +893,8 @@ body {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
+      font-size: 2.5rem;
+      font-weight: 400;
       text-align: center;
       white-space: nowrap;
       color: #262626; }
@@ -922,6 +923,8 @@ body {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-color: #eb3f3f;
+      font-size: 2.5rem;
+      font-weight: 400;
       text-align: center;
       white-space: nowrap; }
 
@@ -936,7 +939,7 @@ body {
     font-weight: 500; }
   .project-about__description {
     font-size: 1.2em;
-    font-weight: 300; }
+    font-weight: 400; }
     .project-about__description strong {
       font-weight: 500; }
     .project-about__description h1, .project-about__description h2, .project-about__description h3, .project-about__description h4, .project-about__description h5 {
@@ -950,18 +953,22 @@ body {
       margin: 0;
       margin-bottom: 3rem; }
     .project-about__description ul {
-      padding-left: 1em;
       box-sizing: border-box; }
     .project-about__description li {
-      width: calc(100% - 1em);
       list-style: none;
-      position: relative; }
+      position: relative;
+      display: flex;
+      align-items: baseline; }
       .project-about__description li:before {
-        position: absolute;
-        left: -1em;
-        content: '\25A0';
-        color: #eb3f3f;
-        margin-right: .5em; }
+        margin-right: .5em;
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #eb3f3f;
+        flex-shrink: 0;
+        position: relative;
+        top: -3px; }
     .project-about__description > *:last-child {
       margin-bottom: 0;
       padding-bottom: 0; }
@@ -972,20 +979,21 @@ body {
   @media only screen and (min-width: 1000px) {
     .about__main-body {
       width: calc(50% - 3rem);
-      padding-bottom: 3rem;
       padding-right: 5%; } }
 .about__snippet {
-  padding-bottom: 1.5em;
-  font-weight: 500;
-  font-size: 1.4em;
-  line-height: 1.2; }
+  padding-bottom: 1.5em; }
   .about__snippet p {
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 2.3rem;
     line-height: 1.2; }
+    @media only screen and (min-width: 1000px) {
+      .about__snippet p {
+        line-height: 1.2;
+        font-weight: 300;
+        font-size: 3rem; } }
 .about__statement {
   font-size: 1.2em;
-  font-weight: 300; }
+  font-weight: 400; }
   .about__statement strong {
     font-weight: 500; }
   .about__statement h1, .about__statement h2, .about__statement h3, .about__statement h4, .about__statement h5 {
@@ -999,25 +1007,32 @@ body {
     margin: 0;
     margin-bottom: 3rem; }
   .about__statement ul {
-    padding-left: 1em;
     box-sizing: border-box; }
   .about__statement li {
-    width: calc(100% - 1em);
     list-style: none;
-    position: relative; }
+    position: relative;
+    display: flex;
+    align-items: baseline; }
     .about__statement li:before {
-      position: absolute;
-      left: -1em;
-      content: '\25A0';
-      color: #eb3f3f;
-      margin-right: .5em; }
+      margin-right: .5em;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #eb3f3f;
+      flex-shrink: 0;
+      position: relative;
+      top: -3px; }
   .about__statement > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0; }
 .about__leadin {
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 1.2em;
   line-height: 1.2; }
+  @media only screen and (min-width: 1000px) {
+    .about__leadin {
+      font-size: 2.3rem; } }
 .about__question {
   font-weight: 500; }
 .about__profile {
@@ -1028,20 +1043,23 @@ body {
   @media only screen and (min-width: 750px) {
     .about__profile {
       width: 25%; } }
-.about__profile-pic {
-  padding-bottom: 6rem; }
-  .about__profile-pic img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%; }
+@media only screen and (max-width: 750px) {
+  .about__profile-pic {
+    padding-top: 3rem;
+    padding-bottom: 6rem; } }
+.about__profile-pic img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%; }
 .about__links {
   padding: 3rem 0; }
   .about__links a {
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     text-decoration-color: #eb3f3f;
-    font-weight: 500; }
+    font-size: 2.5rem;
+    font-weight: 400; }
     @media only screen and (max-width: 750px) {
       .about__links a {
         display: block;
@@ -1061,22 +1079,54 @@ body {
     .about__sidebar {
       width: 25%;
       padding-left: 3rem; } }
-.about__abilities {
-  padding-bottom: 1em; }
-  @media only screen and (max-width: 750px) {
-    .about__abilities {
-      padding-left: 0;
-      width: 100%; } }
-  .about__abilities ul {
-    color: #eb3f3f;
-    list-style-type: square;
-    padding-left: 1em;
-    padding-bottom: 1em; }
-    .about__abilities ul span {
-      color: #262626; }
+@media only screen and (max-width: 750px) {
+  .about__abilities {
+    padding-left: 0;
+    width: 100%; } }
+.about__abilities ul {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-bottom: 3rem; }
+  .about__abilities ul strong {
+    font-weight: 500; }
+  .about__abilities ul h1, .about__abilities ul h2, .about__abilities ul h3, .about__abilities ul h4, .about__abilities ul h5 {
+    font-size: font-size-std;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
+    font-weight: 500; }
+  .about__abilities ul p, .about__abilities ul ol, .about__abilities ul ul {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem; }
+  .about__abilities ul ul {
+    box-sizing: border-box; }
+  .about__abilities ul li {
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: baseline; }
+    .about__abilities ul li:before {
+      margin-right: .5em;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #eb3f3f;
+      flex-shrink: 0;
+      position: relative;
+      top: -3px; }
+  .about__abilities ul > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0; }
 .about__abilities-title {
   font-weight: 500;
-  padding-bottom: 1em; }
+  font-size: 1.2em;
+  line-height: 1.2;
+  margin-bottom: 3rem; }
+  @media only screen and (min-width: 1000px) {
+    .about__abilities-title {
+      font-size: 2rem; } }
 .about__more {
   opacity: 0;
   height: 0;
@@ -1086,16 +1136,19 @@ body {
     opacity: 1;
     height: auto; }
 .about__quote {
-  margin-top: 1em;
-  margin-bottom: 1em;
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 2.3rem;
   line-height: 1.2;
   position: relative;
   width: 100%;
   opacity: 0;
   height: 0;
   transition: all, .6s; }
+  @media only screen and (min-width: 1000px) {
+    .about__quote {
+      line-height: 1.2;
+      font-weight: 300;
+      font-size: 3rem; } }
   .about__quote span {
     width: 100%;
     display: block; }
@@ -1234,13 +1287,19 @@ body {
 .job__details {
   display: block;
   margin-bottom: 3rem; }
+  .job__details p {
+    padding-bottom: 0;
+    margin-bottom: 0; }
   @media only screen and (min-width: 1000px) {
     .job__details {
       display: none; } }
   .job__details__company {
     font-weight: 500;
-    font-size: 1.4em;
+    font-size: 1.2em;
     line-height: 1.2; }
+    @media only screen and (min-width: 1000px) {
+      .job__details__company {
+        font-size: 2.3rem; } }
 .job__profile {
   position: relative;
   width: 100%; }
@@ -1259,7 +1318,7 @@ body {
       padding-right: 5%; } }
 .job__about {
   font-size: 1.2em;
-  font-weight: 300; }
+  font-weight: 400; }
   .job__about strong {
     font-weight: 500; }
   .job__about h1, .job__about h2, .job__about h3, .job__about h4, .job__about h5 {
@@ -1273,29 +1332,34 @@ body {
     margin: 0;
     margin-bottom: 3rem; }
   .job__about ul {
-    padding-left: 1em;
     box-sizing: border-box; }
   .job__about li {
-    width: calc(100% - 1em);
     list-style: none;
-    position: relative; }
+    position: relative;
+    display: flex;
+    align-items: baseline; }
     .job__about li:before {
-      position: absolute;
-      left: -1em;
-      content: '\25A0';
-      color: #eb3f3f;
-      margin-right: .5em; }
+      margin-right: .5em;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #eb3f3f;
+      flex-shrink: 0;
+      position: relative;
+      top: -3px; }
   .job__about > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0; }
-.job p {
-  margin-bottom: 3rem; }
-  .job p:last-of-type {
-    margin-bottom: 0; }
 .job__intro {
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 2.3rem;
   line-height: 1.2; }
+  @media only screen and (min-width: 1000px) {
+    .job__intro {
+      line-height: 1.2;
+      font-weight: 300;
+      font-size: 3rem; } }
 .job__resp {
   width: 100%; }
   @media only screen and (min-width: 1000px) {
@@ -1309,48 +1373,56 @@ body {
   .job__resp-chart .chart {
     max-width: 170px;
     max-height: 170px; }
-.job__tasks {
+.job__tasks ul {
   font-size: 1.2em;
-  font-weight: 300; }
-  .job__tasks strong {
+  font-weight: 400;
+  color: #eb3f3f;
+  list-style-type: square;
+  padding-bottom: 1em; }
+  .job__tasks ul strong {
     font-weight: 500; }
-  .job__tasks h1, .job__tasks h2, .job__tasks h3, .job__tasks h4, .job__tasks h5 {
+  .job__tasks ul h1, .job__tasks ul h2, .job__tasks ul h3, .job__tasks ul h4, .job__tasks ul h5 {
     font-size: font-size-std;
     padding: 0;
     margin: 0;
     margin-bottom: 3rem;
     font-weight: 500; }
-  .job__tasks p, .job__tasks ol, .job__tasks ul {
+  .job__tasks ul p, .job__tasks ul ol, .job__tasks ul ul {
     padding: 0;
     margin: 0;
     margin-bottom: 3rem; }
-  .job__tasks ul {
-    padding-left: 1em;
+  .job__tasks ul ul {
     box-sizing: border-box; }
-  .job__tasks li {
-    width: calc(100% - 1em);
+  .job__tasks ul li {
     list-style: none;
-    position: relative; }
-    .job__tasks li:before {
-      position: absolute;
-      left: -1em;
-      content: '\25A0';
-      color: #eb3f3f;
-      margin-right: .5em; }
-  .job__tasks > *:last-child {
+    position: relative;
+    display: flex;
+    align-items: baseline; }
+    .job__tasks ul li:before {
+      margin-right: .5em;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #eb3f3f;
+      flex-shrink: 0;
+      position: relative;
+      top: -3px; }
+  .job__tasks ul > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0; }
-  .job__tasks ul {
-    color: #eb3f3f;
-    list-style-type: square;
-    padding-bottom: 1em; }
-    .job__tasks ul li {
-      padding-bottom: .5em; }
-    .job__tasks ul span {
-      color: #262626; }
+  .job__tasks ul li {
+    padding-bottom: .5em; }
+  .job__tasks ul span {
+    color: #262626; }
 .job__tasks-title {
   font-weight: 500;
-  padding-bottom: 1em; }
+  font-size: 1.2em;
+  line-height: 1.2;
+  margin-bottom: 3rem; }
+  @media only screen and (min-width: 1000px) {
+    .job__tasks-title {
+      font-size: 2rem; } }
 
 .work-item__head {
   width: 100%;
@@ -1431,7 +1503,7 @@ body {
   width: 100%;
   width: 100%;
   font-size: 1.2em;
-  font-weight: 300; }
+  font-weight: 400; }
   @media only screen and (min-width: 1000px) {
     .work-item__main-snippet {
       width: 50%;
@@ -1449,18 +1521,22 @@ body {
     margin: 0;
     margin-bottom: 3rem; }
   .work-item__main-snippet ul {
-    padding-left: 1em;
     box-sizing: border-box; }
   .work-item__main-snippet li {
-    width: calc(100% - 1em);
     list-style: none;
-    position: relative; }
+    position: relative;
+    display: flex;
+    align-items: baseline; }
     .work-item__main-snippet li:before {
-      position: absolute;
-      left: -1em;
-      content: '\25A0';
-      color: #eb3f3f;
-      margin-right: .5em; }
+      margin-right: .5em;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #eb3f3f;
+      flex-shrink: 0;
+      position: relative;
+      top: -3px; }
   .work-item__main-snippet > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0; }
@@ -1505,7 +1581,12 @@ body {
   flex-wrap: wrap; }
   .pagination__back {
     width: 100%;
-    font-size: 1.4em; }
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.2; }
+    @media only screen and (min-width: 1000px) {
+      .pagination__back {
+        font-size: 2.3rem; } }
     @media only screen and (max-width: 750px) {
       .pagination__back {
         padding-bottom: 3rem; } }
@@ -1518,7 +1599,12 @@ body {
       text-decoration-color: #eb3f3f; }
   .pagination__next-item {
     width: 100%;
-    font-size: 1.4em; }
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.2; }
+    @media only screen and (min-width: 1000px) {
+      .pagination__next-item {
+        font-size: 2.3rem; } }
     @media only screen and (min-width: 750px) {
       .pagination__next-item {
         width: 75%; } }

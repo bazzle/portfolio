@@ -1,33 +1,36 @@
 .snippet{
 	@include align-left;
 	width:100%;
-	padding-top:$text-padding-std*3;
-	padding-bottom:$text-padding-std*4;
 	position:relative;
-	@include bp-minus($bp2){
-		padding-top:2em;
-		padding-bottom:2em;
+	&__title{
+		@include text-leadin;
+		margin-bottom:$text-padding-std;
 	}
 	&__statement{
 		@include col-std(40%);
 	}
 	&__main{
-		@include text-leadin;
 		@include text-underline($color-brand);
 	}
 	&__links{
-		padding-top:$text-padding-std;
-		@include text-leadin;
-		@include bp-minus($bp1){
-		}
+		width:100%;
+		padding-bottom:$text-padding-std;
+	  text-align:center;
+	  white-space: nowrap;
+	  display:flex;
+	  justify-content:flex-start;
+	  align-items:center;
+	  @include bp($bp2){
+	  	padding-bottom:0;
+	  	p{
+	    	line-height: 1.4;
+	  	}
+	  }
 		a{
 			@include link-styled;
-			@include bp-minus($bp1){
-				display:block;
-				padding-bottom:.5em;
-			}
-			&:last-of-type{
-				padding-bottom:0;
+			padding:.5em;
+			&:first-of-type{
+				padding-left:0;
 			}
 		}
 		span{

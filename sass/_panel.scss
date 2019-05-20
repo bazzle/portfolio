@@ -4,6 +4,7 @@
     overflow-y:hidden;
     position:relative;
     &__inner{
+        padding-top:$text-padding-std*2;
         width:100%;
         @include bp($bp2){
             padding:$text-padding-std*2 0;
@@ -32,7 +33,7 @@
     &__inside-title{
         padding-bottom:$text-padding-std *2;
         font-weight:$bold;
-        @include text-leadin;
+        @include text-title;
         width:100%;
         @include col-std(75%);
         &--inline{
@@ -68,26 +69,10 @@
     }
     &-about{
         background-color:$white;
-        .panel__inner{
-            padding-top:$text-padding-std*2;
-            padding-bottom:$text-padding-std;
-            @include bp($bp2){
-                padding-top:$text-padding-std*4;
-                padding-bottom:$text-padding-std*4;
-            }
-        }
     }
     &-progress{
         color:$black;
         background-color:$white;
-        .panel__inner{
-            padding-top:$text-padding-std*2;
-            padding-bottom:$text-padding-std*2;
-            @include bp($bp1){
-                padding-top:$text-padding-std*4;
-                padding-bottom:$text-padding-std*4;
-            }
-        }
         .panel__title{
             //color:$white;
         }

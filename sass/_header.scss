@@ -17,10 +17,12 @@
 
 .header-main{
 	&__inner{
-		border-top:12px solid $color-brand;
 		height:$header-height;
 		@include align-left;
 		width:100%;
+		@include bp($bp1){
+			border-top:12px solid $color-brand;
+		}
 	}
 	&__title{
 		font-weight:$bold;

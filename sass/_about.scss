@@ -4,15 +4,13 @@
 		padding-right:0;
 		@include bp($bp2){
 			width:calc(50% - #{$grid-space});
-			padding-bottom:$text-padding-std;
 			padding-right:5%;
 		}
 	}
 	&__snippet{
 		padding-bottom:1.5em;
-		@include text-leadin;
 		p{
-			@include text-leadin;
+			@include text-leadin-large--tight;
 		}
 	}
 	&__statement{
@@ -32,7 +30,10 @@
 		}
 	}
 	&__profile-pic{
-		padding-bottom:$text-padding-std *2;
+		@include bp-minus($bp1){
+			padding-top:$text-padding-std;
+			padding-bottom:$text-padding-std*2;
+		}
 		img{
 			width:100%;
 			max-width:200px;
@@ -71,24 +72,18 @@
 		}
 	}
 	&__abilities{
-		padding-bottom:1em;
 		@include bp-minus($bp1){
 			padding-left:0;
 			width:100%;
 		}
 		ul{
-			color:$color-brand;
-			list-style-type:square;
-			padding-left:1em;
-			padding-bottom:1em;
-			span{
-				color:$black;
-			}
+			@include text-body;
+			padding-bottom:$text-padding-std;
 		}
 	}
 	&__abilities-title{
-		font-weight: $bold;
-		padding-bottom:1em;
+		@include text-title;
+		margin-bottom:$text-padding-std;
 	}
 	&__readmore{
 	}
@@ -103,9 +98,7 @@
 		}
 	}
 	&__quote{
-		margin-top:1em;
-		margin-bottom:1em;
-		@include text-leadin;
+		@include text-leadin-large--tight;
 		position:relative;
 		width:100%;
 		opacity:0;

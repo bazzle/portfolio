@@ -70,6 +70,10 @@
   &__details{
     display:block;
     margin-bottom:$text-padding-std;
+    p{
+      padding-bottom:0;
+      margin-bottom:0;
+    }
     @include bp($bp2){
       display:none;
     }
@@ -98,14 +102,8 @@
   &__about{
     @include text-body;
   }
-  p{
-    margin-bottom:$text-padding-std;
-    &:last-of-type{
-      margin-bottom:0;
-    }
-  }
   &__intro{
-    @include text-leadin;
+    @include text-leadin-large--tight;
   }
   &__resp{
     width:100%;
@@ -124,8 +122,8 @@
     }
   }
   &__tasks{
-    @include text-body;
     ul{
+      @include text-body;
       color:$color-brand;
       list-style-type:square;
       padding-bottom:1em;
@@ -138,7 +136,7 @@
     }
   }
   &__tasks-title{
-    font-weight: $bold;
-    padding-bottom:1em;
+    @include text-title;
+    margin-bottom:$text-padding-std;
   }
 }

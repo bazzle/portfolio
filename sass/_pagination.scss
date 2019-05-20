@@ -4,7 +4,7 @@
 	flex-wrap:wrap;
 	&__back{
 		width:100%;
-		font-size:1.4em;
+		@include text-leadin;
 		@include bp-minus($bp1){
 			padding-bottom:$text-padding-std;
 		}
@@ -17,7 +17,7 @@
 	}
 	&__next-item{
 		width:100%;
-		font-size:1.4em;
+		@include text-leadin;
 		@include bp($bp1){
 			width:75%;
 		}

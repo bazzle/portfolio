@@ -1,10 +1,3 @@
-// rest things
-
-svg{
-  fill:currentColor;
-}
-
-
 ///////// MIXINS AND VARIABLES ////////////////////////////////////////////////////////////////////////
 
 // paths
@@ -41,6 +34,7 @@ $black:#262626;
 $white: #ffffff;
 $white-darken:darken($white, 5);
 $black-lighten:lighten($black, 20);
+$color-text:#444444;
 
 // font loading
 /*
@@ -65,7 +59,7 @@ $bold:500;
 $text-padding-std:3rem;
 
 // line height
-$line-height:1.7;
+$line-height:1.5;
 
 // underline
 @mixin text-underline($color){
@@ -89,19 +83,62 @@ $line-height:1.7;
   line-height:1.2;
 }
 
+// styled links
+@mixin link-styled{
+  @include text-underline($color-brand);
+  font-size:2.5rem;
+  font-weight:$std;
+}
+
+@mixin text-leadin-hero{
+  font-weight:$std;
+  font-size:2.3rem;
+  line-height:1.2;
+  @include bp($bp2){
+    line-height: 1.4;
+    font-weight:$thin;
+    font-size:3rem;
+  }
+}
+
 @mixin text-leadin-large{
-  font-size:1.1em;
-  font-weight:$thin;
-  line-height: 1.4;
-  @include bp($bp1){
+  font-weight:$bold;
+  font-size:2.3rem;
+  line-height:1.2;
+  @include bp($bp2){
+    line-height: 1.4;
+    font-weight:$thin;
+    font-size:3rem;
+  }
+}
+
+@mixin text-leadin-large--tight{
+  font-weight:$bold;
+  font-size:2.3rem;
+  line-height:1.2;
+  @include bp($bp2){
+    line-height: 1.2;
+    font-weight:$thin;
     font-size:3rem;
   }
 }
 
 @mixin text-leadin{
   font-weight:$bold;
-  font-size:1.4em;
+  font-size:1.2em;
   line-height:1.2;
+  @include bp($bp2){
+    font-size:2.3rem;
+  }
+}
+
+@mixin text-title{
+  font-weight:$bold;
+  font-size:1.2em;
+  line-height:1.2;
+  @include bp($bp2){
+    font-size:2rem;
+  }
 }
 
 @mixin text-tiny{
@@ -111,7 +148,7 @@ $line-height:1.7;
 // text body
 @mixin text-body{
   font-size:1.2em;
-  font-weight:$thin;
+  font-weight:$std;
   strong{
     font-weight:$bold;
   }
@@ -128,19 +165,23 @@ $line-height:1.7;
     margin-bottom:$text-padding-std;
   }
   ul{
-    padding-left:1em;
     box-sizing:border-box;
   }
   li{
-    width:calc(100% - 1em);
     list-style:none;
     position:relative;
+    display:flex;
+    align-items:baseline;
     &:before{
-      position:absolute;
-      left:-1em;
-      content:'\25A0';
-      color:$color-brand;
       margin-right:.5em;
+      content:'';
+      display:block;
+      width:5px;
+      height:5px;
+      background-color:$color-brand;
+      flex-shrink:0;
+      position:relative;
+      top:-3px;
     }
   }
   & > *:last-child{
@@ -212,12 +253,6 @@ $padding-std:2.5rem;
       background-color:$color;
     }
   }
-}
-
-// syled links
-@mixin link-styled{
-  @include text-underline($color-brand);
-  font-weight:$bold;
 }
 
 // mobile text margin
@@ -294,6 +329,7 @@ $padding-std:2.5rem;
 html, body{
   padding:0;
   margin:0;
+  overflow-x:hidden;
 }
 
 // To make every element border-box, and remove margin/padding
@@ -306,6 +342,10 @@ html, body{
   padding: 0;
 }
 
+svg{
+  fill:currentColor;
+}
+
 
 ///////// CLASSES ////////////////////////////////////////////////////////////////////////
 
@@ -313,6 +353,7 @@ html, body{
 html {
   font-family: $font-brand;
   font-size:$font-size-base;
+  color:$color-text;
 }
 
 // body

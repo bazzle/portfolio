@@ -15,7 +15,7 @@
 		border-radius:75px;
 		overflow:visible;
 		span{
-			@include text-underline($color-brand);
+			@include link-styled;
 			text-align:center;
 			white-space: nowrap;
 		}
