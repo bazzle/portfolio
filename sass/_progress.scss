@@ -2,6 +2,10 @@
   width:100%;
   height:auto;
   position:relative;
+  display:none;
+  @include bp($bp1) {
+    display:block;
+  }
   &__line-outer{
     width:100%;
     height:40px;

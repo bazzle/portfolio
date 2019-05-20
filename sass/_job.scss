@@ -1,12 +1,25 @@
+.jobs{
+  @include bp-minus($bp1){
+    display:flex;
+    flex-direction:column-reverse;
+  }
+}
 .job{
-  visibility: hidden;
-  overflow:visible;
-  opacity:0;
-  width:0;
-  height:0;
-  transition: opacity .8s .8s;
-  position:relative;
-  &__inner{
+  @include bp-minus($bp2){
+    padding:$text-padding-std 0;
+    &:nth-of-type(even){
+      background-color:#f7f7f7;
+    }
+  }
+  @include bp($bp2){
+    padding:0;
+    visibility: hidden;
+    overflow:visible;
+    opacity:0;
+    width:0;
+    height:0;
+    transition: opacity .8s .8s;
+    position:relative;
   }
   &__arrows{
     position:absolute;
@@ -27,6 +40,10 @@
     }
   }
   &__logo{
+    margin-bottom:$text-padding-std;
+    @include bp($bp2){
+      margin-bottom:0;
+    }
     img{
       width:auto;
       max-width:220px;
@@ -51,22 +68,35 @@
     }
   }
   &__details{
-    display:none;
+    display:block;
+    margin-bottom:$text-padding-std;
+    @include bp($bp2){
+      display:none;
+    }
+    &__company{
+      @include text-leadin;
+    }
   }
   &__profile{
-    width:25%;
-    padding-right:$grid-space;
     position:relative;
+    width:100%;
+    @include bp($bp2){
+      width:25%;
+      padding-right:$grid-space;
+    }
   }
   &__main-body{
-    width:100%;
     padding-right:0;
+    width:100%;
+    margin-bottom:$text-padding-std;
     @include bp($bp2){
+      margin-bottom:0;
       width:calc(50% - #{$grid-space});
       padding-right:5%;
     }
   }
   &__about{
+    @include text-body;
   }
   p{
     margin-bottom:$text-padding-std;
@@ -78,8 +108,11 @@
     @include text-leadin;
   }
   &__resp{
-    width:25%;
-    margin-left:$grid-space;
+    width:100%;
+    @include bp($bp2){
+      width:25%;
+      margin-left:$grid-space;
+    }
   }
   &__resp-chart{
     display:flex;
@@ -91,10 +124,10 @@
     }
   }
   &__tasks{
+    @include text-body;
     ul{
       color:$color-brand;
       list-style-type:square;
-      padding-left:1em;
       padding-bottom:1em;
       li{
         padding-bottom:.5em;

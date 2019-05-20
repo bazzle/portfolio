@@ -36,10 +36,7 @@
 	  }
 	}
 	&__down-icon {
-		display: none;
-		@include bp($bp1) {
-			@include align-center;
-		}
+		@include align-center;
 		&__icon{
 			color:$color-feint;
 			width: 30px;
@@ -47,21 +44,19 @@
 		}
 	}
 	&__links{
+		width:100%;
 		padding-bottom:$text-padding-std;
 	  text-align:center;
+	  @include text-leadin;
+	  display:flex;
+	  justify-content: center;
+	  align-items:center;
 	  p{
 	    line-height: 1.4;
 	  }
-
-		@include bp-minus($bp1){
-		}
 		a{
 			@include link-styled;
-			display:inline-block;
 			padding:.5em;
-			&:last-of-type{
-				padding-bottom:0;
-			}
 		}
 		span{
 			padding:0 1em;

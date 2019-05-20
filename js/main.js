@@ -42,9 +42,9 @@ $(document).ready(function(){
 
 
       thejobs.forEach(function(i){
-        var company = i.querySelector('.job__company').innerHTML;
-        var role = i.querySelector('.job__role').innerHTML;
-        var dates = i.querySelector('.job__date').innerHTML;
+        var company = i.querySelector('.job__details__company').innerHTML;
+        var role = i.querySelector('.job__details__role').innerHTML;
+        var dates = i.querySelector('.job__details__date').innerHTML;
         addnewjob(company,role,dates);
       });
 

@@ -24,9 +24,10 @@
 		li{
 			padding:0;
 			margin:0;
-			@include bp-minus($bp1){
-				margin-top:.5em;
-				margin-bottom:.5em;
+			font-weight:$bold;
+			@include bp-minus($bp2){
+				margin-top:.8em;
+				margin-bottom:.8em;
 			}
 			&:first-of-type{
 				margin-bottom:2em;

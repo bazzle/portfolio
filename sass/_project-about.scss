@@ -10,6 +10,8 @@
     }
     &__description{
         @include text-body;
-        font-size:1.4em;
+        @mixin bp($bp2){
+            font-size:1.4em;
+        }
     }
 }

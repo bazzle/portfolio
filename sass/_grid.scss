@@ -3,18 +3,26 @@ body{
 }
 
 .row{
-  width:90vw;
+  width:100vw;
   padding-left:5vw;
   padding-right:5vw;
-  max-width:$site-width;
-  margin:0 auto;  
   display:flex;
-  flex-wrap:wrap;
   position:relative;
+  flex-direction: column;
+  @include bp($bp2){
+    width:100vw;
+    padding-left:5vw;
+    padding-right:5vw;
+    max-width:$site-width;
+    margin:0 auto;  
+    display:flex;
+    flex-direction:row;
+    position:relative;
+  }
 }
 
 .grid{
-  width:90vw;
+  width:100vw;
   padding-left:5vw;
   padding-right:5vw;
   max-width:$site-width;
@@ -42,7 +50,7 @@ body{
       width:60vw;
     }
     .grid-3{
-      width:90vw;
+      width:100vw;
     }
   }
   &--row-4{
@@ -56,7 +64,7 @@ body{
       width:67.2vw;
     }
     .grid-4{
-      width:90%;
+      width:100vw;
     }
   }
 
@@ -74,7 +82,7 @@ body{
       width: 72vw;
     }
     .grid-5 {
-      width: 90vw;
+      width: 100vw;
     }
   }
 
@@ -95,7 +103,7 @@ body{
       width: 75vw;
     }
     .grid-6 {
-      width: 90vw;
+      width: 100vw;
     }
   }
 
@@ -122,7 +130,7 @@ body{
       width:78.75vw;
     }
     .grid-8{
-      width:90vw;
+      width:100vw;
     }
   }
     

@@ -32,6 +32,7 @@
     &__inside-title{
         padding-bottom:$text-padding-std *2;
         font-weight:$bold;
+        @include text-leadin;
         width:100%;
         @include col-std(75%);
         &--inline{
@@ -42,7 +43,7 @@
         }
     }
 
-    
+
     &-header{
         background-color:$white;
         padding-top:0;
@@ -57,12 +58,9 @@
         height:auto;
         background-color:$white-darken;
         @include align-center;
-        @include bp($bp1){
-            height:calc(100vh - #{$header-height});
-        }
+        height:calc(100vh - #{$header-height});
     }
     &-snippet{
-        background-color:$white;
         color:$black;
     }
     &-snippet--contact{
@@ -72,8 +70,8 @@
         background-color:$white;
         .panel__inner{
             padding-top:$text-padding-std*2;
-            padding-bottom:$text-padding-std*2;
-            @include bp($bp1){
+            padding-bottom:$text-padding-std;
+            @include bp($bp2){
                 padding-top:$text-padding-std*4;
                 padding-bottom:$text-padding-std*4;
             }
@@ -92,9 +90,6 @@
         }
         .panel__title{
             //color:$white;
-        }
-        @include bp-minus($bp1){
-            display:none;
         }
     }
     &-grid{
