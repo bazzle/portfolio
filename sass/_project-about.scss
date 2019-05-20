@@ -1,17 +1,15 @@
 .project-about{
-    width:calc(66.66% - #{$grid-space});
-    @include bp-minus($bp2){
-        width:calc(100% - #{$grid-space});
-        margin-left:0;
-    }
-    @include bp-minus($bp1){
-        width:100%;
+    width:100%;
+    padding-right:0;
+    @include bp($bp2){
+      width:calc(50% - #{$grid-space});
+      padding-right:5%;
     }
     &__intro{
-        padding-bottom:1.5em;
-        @include text-leadin-large;
+        font-weight:$bold;
     }
     &__description{
         @include text-body;
+        font-size:1.4em;
     }
 }

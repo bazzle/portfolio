@@ -8,7 +8,7 @@
 		width:100%;
 		height:400px;
 		@include bp($bp1){
-			height:calc(90vh - 60px);
+			height:calc(90vh - #{$header-height});
 		}
 		img{
 			width:100%;
@@ -44,29 +44,30 @@
 		}
 	}
 	&__title{
-		&.image{
-		}
 		border-top:$border-feint;
 		padding-top:$text-padding-std*2;
 		padding-bottom:$text-padding-std*3;
 		height:auto;
 		padding-top:$text-padding-std;
 		padding-bottom:$text-padding-std;
-		@include bp($bp1){
-			display:flex;
-			height:10vh;
-			padding:0;
+		&.image{
+			@include bp($bp2){
+				height:10vh;
+				padding:0;
+				@include align-left;
+			}
 		}
-        background-color:$white;
     }
     &__title-inner{
     	@include col-std(75%);
     }
     &__title-main{
         display:inline-block;
+        font-weight:$bold;
+				font-size:2.5rem;
     }
     &__title-client{
-        color:rgba($black,.4);
+        color:$color-feint;
     }
 	&__main{
 		width:100%;

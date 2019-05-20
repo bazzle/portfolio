@@ -1,3 +1,10 @@
+// rest things
+
+svg{
+  fill:currentColor;
+}
+
+
 ///////// MIXINS AND VARIABLES ////////////////////////////////////////////////////////////////////////
 
 // paths
@@ -29,6 +36,7 @@ $bp3: $site-width;
 $color-brand:#eb3f3f;
 $color-accent:#ffd700;
 $color-dark-gray:#4B4B4B;
+$color-feint:#9b9b9b;
 $black:#262626;
 $white: #ffffff;
 $white-darken:darken($white, 5);
@@ -81,9 +89,12 @@ $line-height:1.7;
 }
 
 @mixin text-leadin-large{
-  font-size:2em;
+  font-size:1.1em;
   font-weight:$thin;
   line-height: 1.4;
+  @include bp($bp1){
+    font-size:3rem;
+  }
 }
 
 @mixin text-leadin{
@@ -98,7 +109,8 @@ $line-height:1.7;
 
 // text body
 @mixin text-body{
-  line-height:$line-height;
+  font-size:1.2em;
+  font-weight:$thin;
   strong{
     font-weight:$bold;
   }
@@ -157,7 +169,7 @@ $border-brand-feint: rgba($color-brand, 0.2) solid 1px;
 
 @mixin col-std($width){
   width:100%;
-  @include bp($bp1){
+  @include bp($bp2){
     width:$width;
     margin-left:25%;
   }
@@ -335,6 +347,7 @@ h1, h2, h3, h4, h5{
   font-weight:$std;
   margin:0;
   padding:0;
+  line-height:1.4;
 }
 
 // button

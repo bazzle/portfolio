@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           ]
         },
         dist: {
-          src: 'css/main.css'
+          src: '_site/css/main.css'
         }
       },
       sass: {
@@ -24,25 +24,16 @@ module.exports = function(grunt) {
           }
         }
       },
-      svgmin: {
+      svgstore: {
         options: {
-          plugins: [
-            {
-              removeViewBox: true
-            },
-            {
-              removeUselessStrokeAndFill: true
-            },
-            {
-              cleanupIDs:false
-            },
-          ]
+          prefix : 'icon-',
+          includedemo: true
         },
-        dist: {
+        default: {
           files: {
-            'assets/svg/icons.svg': 'assets/svg/input/*.svg'
+            'assets/svg/icons.svg': ['assets/svg/input/*.svg']
           }
-        }
+        },
       },
       watch: {
         sass: {
@@ -63,7 +54,7 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask("dev", ["browserSync", "watch"]);
-    grunt.registerTask('svg', ['svgmin']);
+    grunt.registerTask('svg', ['svgstore']);
   
 
   };

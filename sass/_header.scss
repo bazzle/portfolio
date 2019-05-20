@@ -28,7 +28,7 @@
 		a{
 		}
 		span{
-			color:rgba($black,.4);
+			color:$color-feint;
 			@include bp-minus($bp1){
 				display:none;
 			}

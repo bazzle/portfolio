@@ -7,8 +7,6 @@
   transition: opacity .8s .8s;
   position:relative;
   &__inner{
-    @extend .panel__inner;
-    padding:0;
   }
   &__arrows{
     position:absolute;
@@ -37,7 +35,6 @@
   }
   &.job-show{
     width:100%;
-    min-height:30em;
     visibility: visible;
     opacity:1;
     width:100%;
@@ -62,19 +59,20 @@
     position:relative;
   }
   &__main-body{
-    width:calc(50% - #{$grid-space});
-    padding-bottom:$text-padding-std;
-    padding-right:5%;
-    @include bp-minus($bp1){
-      width:100%;
-      padding-right:0;
+    width:100%;
+    padding-right:0;
+    @include bp($bp2){
+      width:calc(50% - #{$grid-space});
+      padding-right:5%;
     }
   }
   &__about{
-    margin-bottom:$text-padding-std*2;
   }
   p{
     margin-bottom:$text-padding-std;
+    &:last-of-type{
+      margin-bottom:0;
+    }
   }
   &__intro{
     @include text-leadin;

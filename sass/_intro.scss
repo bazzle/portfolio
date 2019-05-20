@@ -1,9 +1,11 @@
 .intro{
 	@include align-left;
 	position:relative;
-	padding-top:$text-padding-std*4;
-	padding-bottom:$text-padding-std*4;
+	padding-top:$text-padding-std*2;
+	padding-bottom:$text-padding-std*2;
 	@include bp($bp1){
+		padding-top:$text-padding-std*4;
+		padding-bottom:$text-padding-std*4;
 		box-sizing:content-box;
 		height:auto;
 		//padding-bottom:0;
@@ -17,12 +19,13 @@
 	&__inner{
 		width:100%;
 		margin:0 auto;
-		@include bp($bp1){
+		@include bp($bp2){
 			width:70%;
 		}
 	}
 	&__statement{
 		color:$black;
+		padding-bottom:$text-padding-std;
 	  p{
 	  	@include text-leadin-large;
 	  	text-align:center;
@@ -32,13 +35,19 @@
 	    }
 	  }
 	}
-	&__down-icon{
-		color:$black;
-		width:80px;
-		height:80px;
+	&__down-icon {
+		display: none;
+		@include bp($bp1) {
+			@include align-center;
+		}
+		&__icon{
+			color:$color-feint;
+			width: 30px;
+			height: 30px;
+		}
 	}
 	&__links{
-		padding-top:$text-padding-std;
+		padding-bottom:$text-padding-std;
 	  text-align:center;
 	  p{
 	    line-height: 1.4;
@@ -48,10 +57,8 @@
 		}
 		a{
 			@include link-styled;
-			@include bp-minus($bp1){
-				display:block;
-				padding-bottom:.5em;
-			}
+			display:inline-block;
+			padding:.5em;
 			&:last-of-type{
 				padding-bottom:0;
 			}

@@ -3,7 +3,6 @@ $grid-space:$text-padding-std;
 .grid-work{
   margin:0 auto;
   width:100%;
-  padding-bottom:$text-padding-std*2;
   position:relative;
   @include bp($bp1){
     position:relative;
@@ -13,29 +12,6 @@ $grid-space:$text-padding-std;
     max-width:1500px;
     margin:0 auto;
     position:relative;
-  }
-  &__head{
-    $size:4em;
-    background-color:rgba($black,.02);
-    height:$size;
-    width:100%;
-    @include align-left;
-    @include bp($bp1){
-      position:relative;
-    }
-  }
-  &__foot{
-    @extend .grid-work__head;
-    background-color:rgba($black,.05);
-  }
-  &__title{
-    width:100%;
-    @include col-std(75%);
-    color:$black;
-    font-weight:$bold;
-  }
-  &__grid{
-    box-shadow:0 4px 4px rgba($black, .3);
   }
   &__items{
     position:relative;

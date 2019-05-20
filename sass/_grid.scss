@@ -3,18 +3,12 @@ body{
 }
 
 .row{
-  width:100vw;
-  padding-left:0;
-  padding-right:0;
-  @include bp-minus($bp3){
-    width:90vw;
-    padding-left:5vw;
-    padding-right:5vw;
-  }
+  width:90vw;
+  padding-left:5vw;
+  padding-right:5vw;
   max-width:$site-width;
   margin:0 auto;  
   display:flex;
-  align-items:center;
   flex-wrap:wrap;
   position:relative;
 }

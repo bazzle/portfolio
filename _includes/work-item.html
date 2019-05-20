@@ -1,41 +1,35 @@
 <article class="cp work-item work-item--{{ include.bgcolor }}" role="contentinfo" aria-label="article">
 
 	{% if include.banner-image %}
-	<div class="panel panel-work-item-banner">
-		<div class="work-item__banner">
-			<img class="{{ include.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ include.banner-image }}" alt=""/>
-		</div>
+	<div class="work-item__banner">
+		<img class="{{ include.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ include.banner-image }}" alt=""/>
 	</div>
 	{% endif %}
-	<header class="work-item__title {% if include.banner-image %}image{% endif %}" 
+	<div class="work-item__title {% if include.banner-image %}image{% endif %}" 
 	{% if include.title-bg-color %}style="background-color:{{ include.title-bg-color }}; color:{{ include.title-text-color }};"{% endif %}>
 		<div class="row">
 			<div class="work-item__title-inner">
 				<h1 class="work-item__title-main">
 					{{ include.title }}
+					<span class="work-item__title-client">
+						&nbsp;&nbsp;/&nbsp; {{ include.client }}
+					</span>
 				</h1>
-				<span class="work-item__title-client">
-					&nbsp;&nbsp;/&nbsp; {{ include.client }}
-				</span>
 			</div>
 		</div>
-	</header>
+	</div>
 
 	<div class="panel panel-work-item-head">
 		<div class="row">
 		<div class="work-item__head">
 
 			<div class="work-item__about">
-				<div class="cp project-about">
-					<div class="project-about__metadata">
+					<div class="project-about__description">
 						<p class="project-about__intro">
 							{{ include.intro }}
 						</p>
-					</div>
-					<div class="project-about__description">
 						{{ include.description }}
 					</div>
-				</div>
 			</div>
 		</div><!-- end of head -->
 		</div>
