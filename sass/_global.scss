@@ -79,7 +79,7 @@ $line-height:1.5;
 }
 
 @mixin text-page-title{
-  font-size:2em;
+  font-size:2.3rem;
   font-weight:$bold;
   line-height:1.2;
 }
@@ -98,8 +98,8 @@ $line-height:1.5;
 
 @mixin text-leadin-hero{
   font-weight:$std;
-  font-size:2.3rem;
-  line-height:1.2;
+  font-size:1.8rem;
+  line-height:1.4;
   @include bp($bp2){
     line-height: 1.4;
     font-weight:$thin;

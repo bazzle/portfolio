@@ -13,8 +13,12 @@
 	&__title{
 		display:block;
 		text-align:center;
-		@include text-page-title;
+		@include text-leadin-large;
+		font-weight:$bold;
 		margin-bottom:$text-padding-std;
+		@include bp($bp2){
+			font-weight:$bold;
+		}
 	}
 	&__inner{
 		width:100%;
@@ -49,23 +53,16 @@
 	  display:flex;
 	  justify-content: center;
 	  align-items:center;
-	  @include link-styled;
-	  @include bp($bp2){
-	  	p{
-	    	line-height: 1.4;
-	  	}
+	  flex-direction:row;
+	  font-size:2.3rem;
+	  font-weight:$std;
+	  a{
+	    @include text-underline($color-brand);
+	    padding:.2em;
 	  }
-		a{
-			padding:.5em;
-		}
-		span{
-			padding:0 1em;
-			color:$black-lighten;
-			text-decoration:none;
-			@include bp-minus($bp1){
-				display:none;
-			}
-		}
+	  @include bp($bp2){
+	    font-size:2.3rem;
+	  }
 	}
 	&__statement-cta{
 		@include text-underline($color-brand);
