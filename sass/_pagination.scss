@@ -4,26 +4,20 @@
 	flex-wrap:wrap;
 	&__back{
 		width:100%;
-		@include text-leadin;
 		@include bp-minus($bp1){
 			padding-bottom:$text-padding-std;
 		}
 		@include bp($bp1){
 			width:25%;
 		}
-		a{
-			@include text-underline($color-brand);
-		}
+		@include link-styled;
 	}
 	&__next-item{
 		width:100%;
-		@include text-leadin;
 		@include bp($bp1){
 			width:75%;
 		}
-		a{
-			@include text-underline($color-brand);
-		}
+		@include link-styled;
 		span{
 		}
 	}

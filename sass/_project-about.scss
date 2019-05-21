@@ -6,7 +6,7 @@
       padding-right:5%;
     }
     &__intro{
-        font-weight:$bold;
+        @include text-leadin-large--tight;
     }
     &__description{
         @include text-body;

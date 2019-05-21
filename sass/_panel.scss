@@ -95,9 +95,12 @@
     }
     &-work-item-pagination{
         color:$black;
-        background-color:$white-darken;
         padding-top:$text-padding-std*2;
         padding-bottom:$text-padding-std*2;
+        background-color:$gray;
+        &--bg-white{
+            background-color:$white;
+        }
     }
     &-footer{
         //border-top:$border-feint;

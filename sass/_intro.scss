@@ -49,13 +49,13 @@
 	  display:flex;
 	  justify-content: center;
 	  align-items:center;
+	  @include link-styled;
 	  @include bp($bp2){
 	  	p{
 	    	line-height: 1.4;
 	  	}
 	  }
 		a{
-			@include link-styled;
 			padding:.5em;
 		}
 		span{

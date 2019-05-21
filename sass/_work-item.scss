@@ -45,9 +45,6 @@
 	}
 	&__title{
 		border-top:$border-feint;
-		padding-top:$text-padding-std*2;
-		padding-bottom:$text-padding-std*3;
-		height:auto;
 		padding-top:$text-padding-std;
 		padding-bottom:$text-padding-std;
 		&.image{
@@ -63,8 +60,7 @@
     }
     &__title-main{
         display:inline-block;
-        font-weight:$bold;
-				font-size:2.5rem;
+        @include text-title;
     }
     &__title-client{
         color:$color-feint;
@@ -76,6 +72,7 @@
 			height:auto;
 			max-width:1500px;
 			margin:$text-padding-std*3 0;
+			box-shadow:$shadow;
 			@include bp-minus($bp1){
 				margin:$text-padding-std 0;
 			}
@@ -84,16 +81,31 @@
 			}
 			&:last-of-type{
 				@include bp($bp1){
-					margin-bottom:$text-padding-std*6;
+					margin-bottom:0;
+				}
+			}
+			&.devices{
+				padding:$text-padding-std;
+				&--white-bg{
+					background-color:$white;
+				}
+				&--gray-bg{
+					background-color:$gray;
+				}
+				&--gray2-bg{
+					background-color:#fafafa;
 				}
 			}
 		}
 	}
 	&__main-snippet{
-		padding-top:$text-padding-std*2;
-		padding-bottom:$text-padding-std*3;
-		width:100%;
-		@include col-std(50%);
+		padding-top:$text-padding-std;
+		padding-bottom:$text-padding-std;
+		@include bp($bp2){
+			padding-top:$text-padding-std*2;
+			padding-bottom:$text-padding-std*2;
+		}
+		@include col-std(75%);
 		@include text-body;
 		p{
 			&:last-of-type{
@@ -103,7 +115,7 @@
 	}
 	&__about{
 		padding-top:$text-padding-std*2;
-		padding-bottom:$text-padding-std*3;
+		padding-bottom:$text-padding-std*2;
 		@include col-std(75%);
 	}
 	&__image-inner{
