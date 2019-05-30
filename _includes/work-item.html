@@ -20,18 +20,20 @@
 	</div>
 
 	<div class="panel panel-work-item-head">
-		<div class="row">
-		<div class="work-item__head">
+		<div class="panel__inner">
+			<div class="row">
+			<div class="work-item__head">
 
-			<div class="work-item__about">
-					<div class="project-about__description">
-						<p class="project-about__intro">
-							{{ include.intro }}
-						</p>
-						{{ include.description }}
-					</div>
+				<div class="work-item__about">
+						<div class="project-about__description">
+							<p class="project-about__intro">
+								{{ include.intro }}
+							</p>
+							{{ include.description }}
+						</div>
+				</div>
+			</div><!-- end of head -->
 			</div>
-		</div><!-- end of head -->
 		</div>
 	</div><!-- end panel --> 
 
@@ -46,6 +48,7 @@
 
 
 	<div class="panel panel-work-item-pagination {% if include.bgcolor == 'gray' %}panel-work-item-pagination--bg-white{% endif %}">
+		<div class="panel__inner">
 		<div class="row">
 			<div class="cp pagination">
 				<div class="pagination__back">
@@ -56,6 +59,7 @@
 					{{ include.next-item-link }}
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 

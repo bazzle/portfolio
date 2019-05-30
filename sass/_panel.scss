@@ -4,10 +4,10 @@
     overflow-y:hidden;
     position:relative;
     &__inner{
-        padding-top:$text-padding-std*2;
+        padding:$text-padding-std*2 0;
         width:100%;
         @include bp($bp2){
-            padding:$text-padding-std*2 0;
+            padding:$text-padding-std*5 0;
         }
     }
 
@@ -91,15 +91,19 @@
         padding:0;
     }
     &-work-item-main{
-        padding-bottom:$text-padding-std*2;
+        padding-bottom:$text-padding-std*5;
     }
     &-work-item-pagination{
         color:$black;
-        padding-top:$text-padding-std*2;
-        padding-bottom:$text-padding-std*2;
         background-color:$gray;
         &--bg-white{
             background-color:$white;
+        }
+        .panel__inner{
+            @include bp($bp2){
+                padding-top:$text-padding-std*5;
+                padding-bottom:$text-padding-std*5;
+            }
         }
     }
     &-footer{
