@@ -2,17 +2,10 @@
 	<div class="row">
 		<nav class="cp main-menu">
 			<ul class="main-menu__list">
-				<li><a href="{{ '/' | absolute_url }}">Home</a></li>
-				<li><a href="{{ 'digital-advertising' | absolute_url }}">Digital Advertising</a></li>
-				<li><a href="{{ 'apartments-for-london' | absolute_url }}">Apartments for London</a></li>
-				<li><a href="{{ 'indigo-trust' | absolute_url }}">Indigo Trust</a></li>
-				<li><a href="{{ 'data-visualization-tips' | absolute_url }}">Data Visualization Tips</a></li>
-				<li><a href="{{ 'the-center-of-happiness' | absolute_url }}">The Center of Happiness</a></li>
-				<li><a href="{{ 'located' | absolute_url }}">LocatED</a></li>
-				<li><a href="{{ '3-st-james-square' | absolute_url }}">3 St James's Square</a></li>
-				<li><a href="{{ 'the-columbus-building' | absolute_url }}">The Columbus Building</a></li>
-				<li><a href="{{ 'salesforce-tower' | absolute_url }}">Salesforce Tower</a></li>
-				<li><a href="{{ '28-chancery-lane' | absolute_url }}">28 Chancery Lane</a></li>
+				<li><a href="/">Home</a></li>
+				{% for page in site.pages %}
+					<li><a href="{{page.permalink}}">{{page.title}}</a></li>
+				{% endfor %}
 			</ul>
 		</nav>
 	</div>
