@@ -4,6 +4,7 @@ email: barry@br-web.io
 description:
    Front-end developer and UI designer currently available for hire.
 baseurl: "portfolio"
+url: ""
 
 # Build settings
 markdown: kramdown
