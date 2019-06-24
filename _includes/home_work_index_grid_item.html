@@ -1,6 +1,6 @@
 <div class="grid-work__item">
-	<a class="grid-work__link" href="{{ include.link }}">
-		<img class="grid-work__image" src="assets/images/projects/{{ include.image }}.{{include.image-ext}}" srcset="assets/images/projects/{{ include.image }}@2x.{{include.image-ext}} 2x" alt="{{include.image-alt}}">
+	<a class="grid-work__link" href="{{ include.link | absolute_url }}">
+		<img class="grid-work__image" src="{{site.url}}/assets/images/projects/{{ include.image }}.{{include.image-ext}}" srcset="assets/images/projects/{{ include.image }}@2x.{{include.image-ext}} 2x" alt="{{include.image-alt}}">
 		<div class="grid-work__meta">
 			<div class="grid-work__meta-inner">
 				<span>{{ include.title }}</span>
