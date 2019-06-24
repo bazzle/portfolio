@@ -60,6 +60,7 @@
         background-color:$white-darken;
         @include align-center;
         height:calc(100vh - #{$header-height});
+        max-height:800px;
     }
     &-snippet{
         color:$black;

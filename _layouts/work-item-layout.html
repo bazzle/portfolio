@@ -1,24 +1,71 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+---
+layout: default
+---
 
-<head>
-  {% include head.html %}
-</head>
+<article class="cp work-item work-item--{{ page.bgcolor }}" role="contentinfo" aria-label="article">
 
-  <body id="work-item">
-    <header class="header">
-        {% include header.html %}
-    </header>
-    
-    <main>
-        {{ content }}
-    </main>
+        {% if page.banner-image %}
+        <div class="work-item__banner">
+          <img class="{{ page.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ page.banner-image }}" alt=""/>
+        </div>
+        {% endif %}
+        <div class="work-item__title {% if page.banner-image %}image{% endif %}" 
+        {% if page.title-bg-color %}style="background-color:{{ page.title-bg-color }}; color:{{ page.title-text-color }};"{% endif %}>
+          <div class="row">
+            <div class="work-item__title-inner">
+              <h1 class="work-item__title-main">
+                {{ page.title }}
+                <span class="work-item__title-client">
+                  &nbsp;&nbsp;/&nbsp; {{ page.client }}
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
 
-    <footer>
-        {% include footer.html %}
-    </footer>
-  </body>
+        <div class="panel panel-work-item-head">
+          <div class="panel__inner">
+            <div class="row">
+            <div class="work-item__head">
 
-  {% include scripts.html %}
+              <div class="work-item__about">
+                  <div class="project-about__description">
+                    <p class="project-about__intro">
+                      {{ page.intro }}
+                    </p>
+                    {{ page.description }}
+                  </div>
+              </div>
+            </div><!-- end of head -->
+            </div>
+          </div>
+        </div><!-- end panel --> 
 
-</html>
+
+        <div class="panel panel-work-item-main">
+          <div class="row">
+            <div class="work-item__main">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-work-item-pagination {% if page.bgcolor == 'gray' %}panel-work-item-pagination--bg-white{% endif %}">
+          <div class="panel__inner">
+          <div class="row">
+            <div class="cp pagination">
+              <div class="pagination__back">
+                <a href="/index.html">Back to Homepage</a>
+              </div>
+              <div class="pagination__next-item">
+                <span>Next Project &mdash;</span>
+                <a href="{{ page.next-item-link }}">{{ page.next-item-name }}</a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+</article>
