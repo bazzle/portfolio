@@ -3,8 +3,8 @@
 		<nav class="cp main-menu">
 			<ul class="main-menu__list">
 				<li><a href="{{site.url}}/">Home</a></li>
-				{% for page in site.pages %}
-					<li><a href="{{site.url}}/{{page.permalink}}">{{page.title}}</a></li>
+				{% for item in site.data.nav-work-items %}
+					<li><a href="{{site.url}}/{{item.url}}">{{item.title}}</a></li>
 				{% endfor %}
 			</ul>
 		</nav>
