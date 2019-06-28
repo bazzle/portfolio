@@ -2,8 +2,7 @@
 title: Barry Richards
 email: barry@br-web.io
 description: Front-end developer and UI designer currently available for hire.
-baseurl: ""
-url: "https://bazzle.github.io/portfolio/"
+url: "https://bazzle.github.io"
 # Build settings
 markdown: kramdown
 port: 4000

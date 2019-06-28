@@ -13,9 +13,8 @@ module.exports = function(grunt) {
             require('cssnano')() // minify the result 
           ]
         },
-        dist: {
-          src: '_site/css/main.css'
-        }
+        src: "_site/assets/css/style.css",
+        dest: "_site/assets/css/style.css"
       },
       sass: {
         dist: {
