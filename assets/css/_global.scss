@@ -96,6 +96,11 @@ $line-height:1.5;
   }
 }
 
+@mixin text-snippet{
+  font-weight:300;
+  font-size:1.5em;
+}
+
 @mixin text-leadin-hero{
   font-weight:$std;
   font-size:1.8rem;
@@ -108,12 +113,11 @@ $line-height:1.5;
 }
 
 @mixin text-leadin-large{
-  font-weight:$bold;
+  font-weight:400;
   font-size:2.3rem;
   line-height:1.2;
   @include bp($bp2){
     line-height: 1.4;
-    font-weight:$thin;
     font-size:3rem;
   }
 }
@@ -315,7 +319,7 @@ $padding-std:2.5rem;
 @mixin align-right{
     display:flex;
     align-items:center;
-    justify-conten:flex-end;
+    justify-content:flex-end;
 }
 @mixin align-right-top{
     display:flex;

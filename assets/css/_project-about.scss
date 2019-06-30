@@ -6,12 +6,13 @@
       padding-right:5%;
     }
     &__intro{
-        @include text-leadin-large--tight;
+        @include text-leadin-large;
+        padding-bottom:$text-padding-std;
     }
     &__description{
-        @include text-body;
-        @mixin bp($bp2){
-            font-size:1.4em;
+        p{
+            @include text-snippet;
+            padding-bottom:$text-padding-std;
         }
     }
 }

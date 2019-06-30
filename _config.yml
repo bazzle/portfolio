@@ -4,7 +4,9 @@ email: barry@br-web.io
 description: Front-end developer and UI designer currently available for hire.
 url: "https://br-web.io"
 # Build settings
+exclude: [assets/css, gruntfile.js, package.json, node_modules]
+keep_files: [assets/css]
+include: ["_pages"]
 markdown: kramdown
 port: 4000
 livereload: false
-include: ["_pages"]

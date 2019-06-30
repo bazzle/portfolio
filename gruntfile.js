@@ -1,59 +1,61 @@
 module.exports = function(grunt) {
+  
+  require('jit-grunt')(grunt);
 
-  require('load-grunt-tasks')(grunt);
-  
-    grunt.initConfig({
-      postcss: {
+  grunt.initConfig({
+    postcss: {
+      prod: {
         options: {
-          map: true, // inline sourcemaps
-  
           processors: [
-            require('pixrem')(), // add fallbacks for rem units 
-            require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes 
-            require('cssnano')() // minify the result 
+            require("pixrem")(), // add fallbacks for rem units
+            require("autoprefixer"),
+            require("cssnano")() // minify the result
           ]
         },
         src: "_site/assets/css/style.css",
         dest: "_site/assets/css/style.css"
+      }
+    },
+    sass: {
+      options: {
+        style: "expanded"
       },
-      sass: {
-        dist: {
-          files: {
-            'css/main.css': 'sass/main.scss'
-          }
+      files: {
+        src: "assets/css/main.scss",
+        dest: "_site/assets/css/style.css"
+      }
+    },
+
+    svgstore: {
+      options: {
+        prefix: "icon-",
+        includedemo: true
+      },
+      default: {
+        files: {
+          "assets/svg/icons.svg": ["assets/svg/input/*.svg"]
         }
-      },
-      svgstore: {
-        options: {
-          prefix : 'icon-',
-          includedemo: true
-        },
-        default: {
-          files: {
-            'assets/svg/icons.svg': ['assets/svg/input/*.svg']
-          }
-        },
-      },
-      watch: {
-        sass: {
-          files: ['sass/*.scss'],
-          tasks: ['sass'],
-         }
-      },
-      browserSync: {
+      }
+    },
+    browserSync: {
+      dev: {
         bsFiles: {
-          src: ["_site/css/main.css", "_site/*.html"]
+          src: ["_site/*.html", "_site/*.css"]
         },
         options: {
           watchTask: true,
-          proxy: "http://localhost:4000"
+          proxy: "localhost:4000"
         }
-      },
-    });
+      }
+    },
+    watch: {
+      css: {
+        files: ["assets/css/**/*.scss"],
+        tasks: ["sass"]
+      }
+    }
+  });
 
-
-    grunt.registerTask("dev", ["browserSync", "watch"]);
-    grunt.registerTask('svg', ['svgstore']);
-  
-
-  };
+  grunt.registerTask("dev", ["browserSync", "watch"]);
+  grunt.registerTask("svg", ["svgstore"]);
+};

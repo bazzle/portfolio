@@ -9,8 +9,6 @@ $grid-space:$text-padding-std;
   }
   &__inner{
     width:100%;
-    max-width:1500px;
-    margin:0 auto;
     position:relative;
   }
   &__items{
@@ -29,9 +27,11 @@ $grid-space:$text-padding-std;
     right:0;
     top:0;
     bottom:0;
+    padding:$grid-space;
+    padding-left:0;
+    padding-right:0;
     @include bp($bp1){
       display:grid;
-      padding:$grid-space;
       background-color:$white;
       grid-row-gap:$grid-space;
       grid-column-gap:$grid-space;
@@ -39,12 +39,14 @@ $grid-space:$text-padding-std;
     }
   }
   &__item{
-    display:none;
-    overflow:hidden;
-    background-color:#fafafa;
-    @include bp-minus($bp1){
-      display:block;
-      margin:$grid-space;
+    display:block;
+    margin-top:$grid-space;
+    margin-bottom:$grid-space;
+    @include bp($bp1){
+      margin:0;
+      display:none;
+      overflow:hidden;
+      background-color:#fafafa;
     }
     @include bp($bp1){
       &:nth-of-type(1){
