@@ -27,10 +27,11 @@
 	&__title{
 		font-weight:$bold;
 		flex-grow:1;
+		color:$black;
 		a{
 		}
 		span{
-			color:$color-feint;
+			color:$color-dark-gray;
 			@include bp-minus($bp1){
 				display:none;
 			}

@@ -1,13 +1,10 @@
 .snippet{
-	@include align-left;
 	width:100%;
 	position:relative;
+	@include col-std(40%);
 	&__title{
 		@include text-leadin;
 		margin-bottom:$text-padding-std;
-	}
-	&__statement{
-		@include col-std(40%);
 	}
 	&__main{
 		@include text-underline($color-brand);

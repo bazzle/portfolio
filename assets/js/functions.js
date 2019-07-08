@@ -174,35 +174,43 @@ var functions = function() {
     }, 200);
   }
 
-  function menu(){
-    $('.js-menu-button').on('click',function(){
-      if ( $(this).hasClass('close-menu') ){
-        $('.js-menu').toggleClass('visible');
-        $(this).text('Menu').toggleClass('close-menu');
-        unlockview();
+
+  function menu() {
+    function lockview() {
+      $("body").addClass("noscroll");
+    }
+    function unlockview() {
+      $("body").removeClass("noscroll");
+    }
+    function menu_open() {
+      $(".js-menu-button").attr("aria-pressed", true).attr("aria-expanded", true);
+      $(".js-menu").addClass("visible");
+      $(".js-menu-button").text('Close menu');
+      lockview();
+    }
+    function menu_close() {
+      $(".js-menu-button").attr("aria-pressed", false).attr("aria-expanded", false);
+      $(".js-menu").removeClass("visible");
+      $(".js-menu-button").text('Menu');
+      unlockview();
+    }
+    $(".js-menu-button").on("click", function() {
+      if ($(".js-menu").hasClass("visible")) {
+        menu_close();
       } else {
-        $('.js-menu').toggleClass('visible');
-        $(this).text('Close menu').toggleClass('close-menu');
-        lockview();
+        menu_open();
       }
     });
-    $(document).on('keyup',function(e){
-      if ( $('.js-menu').hasClass('visible') && (e.key == 'Escape') ){
-        $('.js-menu').toggleClass('visible');
-        $(this).text('Menu').toggleClass('close-menu');
-        unlockview();
+    $(document).on("keyup", function(e) {
+      if ($(".js-menu").hasClass("visible") && e.key == "Escape") {
+        menu_close();
       }
     });
-
   }
 
-  function lockview(){
-    $('body').addClass('noscroll');
-  }
 
-  function unlockview(){
-    $('body').removeClass('noscroll');
-  }
+
+
 
   return{
     readmore: readmore,
@@ -210,8 +218,6 @@ var functions = function() {
     careerprogress: careerprogress,
     homegrid: homegrid,
     menu: menu,
-    lockview: lockview,
-    unlockview: unlockview
   }
 
 }

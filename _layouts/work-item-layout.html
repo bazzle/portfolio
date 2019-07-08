@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<article class="cp work-item work-item--{{ page.bgcolor }}" role="contentinfo" aria-label="article">
+<article class="cp work-item work-item--{{ page.bgcolor }}">
 
         {% if page.banner-image %}
         <div class="work-item__banner">
-          <img class="{{ page.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ page.banner-image }}" alt=""/>
+          <img class="{{ page.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ page.banner-image }}" alt="{{ page.banner-image-alt }}"/>
         </div>
         {% endif %}
         <div class="work-item__title {% if page.banner-image %}image{% endif %}" 
@@ -60,7 +60,7 @@ layout: default
               </div>
               <div class="pagination__next-item">
                 <span>Next Project &mdash;</span>
-                <a href="{{site.url}}/{{ page.next-item-link }}">{{ page.next-item-name }}</a>
+                <a href="{{site.url}}/{{ page.next-item-link }}.html">{{ page.next-item-name }}</a>
               </div>
             </div>
           </div>

@@ -60,10 +60,11 @@
     }
     &__title-main{
         display:inline-block;
+        color:$black;
         @include text-title;
     }
     &__title-client{
-        color:$color-feint;
+        color:$color-dark-gray;
     }
 	&__main{
 		width:100%;
