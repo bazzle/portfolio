@@ -7,3 +7,6 @@ if ( $('body').attr('id') == 'homepage' ){
   allfunctions.careerprogress();
   allfunctions.homegrid();
 }
+if ( $('body').hasClass('flickity')){
+  allfunctions.flickity();
+};

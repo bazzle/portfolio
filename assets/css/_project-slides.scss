@@ -1,0 +1,35 @@
+.slides{
+  width:100%;
+  height:auto;
+  margin-bottom:$text-padding-std*4;
+  @include bp-minus($bp1){
+    margin:$text-padding-std 0;
+  }
+  @include align-center;
+  &__inner{
+    box-shadow:$shadow;
+    width:100%;
+    height:auto;
+    border-radius:5px;
+    @include bp($bp1){
+      width:80%;
+    }
+  }
+  &__image{
+    width:100%;
+    height:auto;
+  }
+}
+
+.flickity-prev-next-button{
+  background-color:transparent;
+  &.previous{
+    transform:translateX(-200%);
+  }
+  &.next{
+    transform:translateX(200%);
+  }
+}
+
+.flickity-viewport{
+}

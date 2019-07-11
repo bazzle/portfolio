@@ -1,0 +1,47 @@
+.banner-devices{
+    background-image: linear-gradient(#0982C3, #21c4d3);
+    width:100%;
+    height:auto;
+    height:100%;
+    perspective:1000px;
+    margin-bottom:$text-padding-std*4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    overflow:hidden;
+    @include bp($bp1){
+
+    }
+    &__image{
+        position:relative;
+        width:100%;
+        height:auto;
+        flex-shrink: 0;
+        border-radius:3px;
+        margin:0;
+        width:100%;
+        height:auto;
+        max-width:1500px;
+        box-shadow:$shadow;
+        @include bp($bp1){
+            border-radius:10px;
+        }
+    }
+    &__tablet{
+        border-radius:3px;
+        width:40%;
+        max-width:600px;
+        margin-right:-5%;
+        transform: $rotatey $rotatex translatey(-5%);
+        @include bp($bp1){
+            border-radius:5px;
+        }
+    }
+    &__phone{
+        width:20%;
+        max-width:330px;
+        margin-right:-5%;
+        transform: $rotatey $rotatex translatey(10%);
+    }
+}

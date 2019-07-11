@@ -3,11 +3,9 @@ layout: default
 ---
 
 <article class="cp work-item work-item--{{ page.bgcolor }}">
-
-        {% if page.banner-image %}
-        <div class="work-item__banner">
-          <img class="{{ page.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ page.banner-image }}" alt="{{ page.banner-image-alt }}"/>
-        </div>
+        
+        {% if page.banner-image == true or page.banner-devices == true %}
+          {% include work_item_banner.html %}
         {% endif %}
         <div class="work-item__title {% if page.banner-image %}image{% endif %}" 
         {% if page.title-bg-color %}style="background-color:{{ page.title-bg-color }}; color:{{ page.title-text-color }};"{% endif %}>
@@ -35,6 +33,11 @@ layout: default
                   <div class="project-about__description">
                     {{ page.description }}
                   </div>
+                  {% if page.launch_link %}
+                    <a class="button" href="{{ page.launch_link }}" class="project-about__launch">
+                      Launch project
+                    </a>
+                  {% endif %}
               </div>
             </div><!-- end of head -->
             </div>

@@ -1,3 +1,5 @@
+$rotatey:rotateY(15deg);
+$rotatex:rotateX(10deg);
 .work-item{
 	&__head{
 		width:100%;
@@ -10,7 +12,7 @@
 		@include bp($bp1){
 			height:calc(90vh - #{$header-height});
 		}
-		img{
+		&__image{
 			width:100%;
 			height:100%;
 			object-fit:cover;
@@ -68,7 +70,8 @@
     }
 	&__main{
 		width:100%;
-		img{
+		&__image{
+			border-radius:5px;
 			width:100%;
 			height:auto;
 			max-width:1500px;
@@ -90,7 +93,7 @@
 		    flex-direction:row;
 		  }
 		  &__image{
-		  	background-color:gold;
+		  	box-shadow:$shadow;
 		    width:100%;
 		    height:auto;
 		    flex-shrink: 0;
@@ -99,12 +102,14 @@
 		    }
 		  }
 		  &__tablet{
+				border-radius:5px;
 				@include bp($bp1){
 					width:40%;
 					max-width:600px;
 				}
 		  }
 		  &__phone{
+				border-radius:10px;
 		  	@include bp($bp1){
 					width:20%;
 					max-width:330px;
@@ -121,6 +126,7 @@
 		}
 		@include col-std(75%);
 		p{
+			margin-bottom:$text-padding-std;
 			@include bp($bp1){
 				@include text-snippet;
 			}

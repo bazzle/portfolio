@@ -1,0 +1,7 @@
+<div class="slides">
+  <div class="slides__inner flickity-slides-fade">
+    {% for image in include.images %}
+      <img class="slides__image" src="{{site.url}}/assets/images/projects/{{ image }}" alt="{{include.alt}}" />
+    {% endfor %}
+  </div>
+</div>

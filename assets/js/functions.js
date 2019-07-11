@@ -174,7 +174,6 @@ var functions = function() {
     }, 200);
   }
 
-
   function menu() {
     function lockview() {
       $("body").addClass("noscroll");
@@ -208,7 +207,25 @@ var functions = function() {
     });
   }
 
-
+  function flickity(){
+    $('.flickity-slides').flickity({
+      // options
+      cellAlign: 'left',
+      contain: true,
+      pageDots: false,
+    });
+    $('.flickity-slides-fade').flickity({
+      // options
+      cellAlign: 'left',
+      contain: true,
+      pageDots: false,
+      autoPlay: 2500,
+      fade: true,
+      prevNextButtons: false,
+      pauseAutoPlayOnHover: false,
+      draggable: false
+    });
+  }
 
 
 
@@ -218,6 +235,7 @@ var functions = function() {
     careerprogress: careerprogress,
     homegrid: homegrid,
     menu: menu,
+    flickity: flickity
   }
 
 }

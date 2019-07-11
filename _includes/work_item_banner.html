@@ -1,0 +1,8 @@
+<div class="work-item__banner">
+	{% if page.banner-image == true %}
+  <img class="work-item__banner__image {{ page.banner-image-position | default: 'center-center' }}" src="../assets/images/projects/{{ page.banner-image-path }}" alt="{{ page.banner-image-alt }}"/>
+  {% endif %}
+  {% if page.banner-devices == true %}
+  	{% include banner-devices.html filename=page.banner-devices-filename alt="Devices view" %}
+  {% endif %}
+</div>

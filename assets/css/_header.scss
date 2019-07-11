@@ -38,6 +38,8 @@
 		}
 	}
 	&__menu-button{
+		@extend %anchor;
 		cursor:pointer;
+		font-weight:$bold;
 	}
 }
