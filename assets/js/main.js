@@ -8,5 +8,8 @@ if ( $('body').attr('id') == 'homepage' ){
   allfunctions.homegrid();
 }
 if ( $('body').hasClass('flickity')){
-  allfunctions.flickity();
+  window.onload = function() {
+    console.log('loaded');
+    allfunctions.flickity();
+  };
 };
