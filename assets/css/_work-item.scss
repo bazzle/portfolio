@@ -86,6 +86,9 @@ $rotatex:rotateX(10deg);
 	  	align-items:center;
 	    justify-content:space-between;
 	    flex-direction:row;
+	    &--reverse{
+	    	flex-direction:row-reverse;
+	    }
 		  &__item{
 		    flex-shrink: 0;
 			  &__tablet{
