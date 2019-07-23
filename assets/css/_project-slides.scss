@@ -11,8 +11,29 @@
     width:100%;
     height:auto;
     border-radius:5px;
+    opacity:0;
+    visibility:hidden;
     @include bp($bp1){
       width:80%;
+    }
+    .no-js &{
+      opacity:1;
+      visibility:visible;
+    }
+    &.loaded{
+      @keyframes fadein{
+        from{
+          opacity:0;
+          visibility:hidden;
+        }
+        to{
+          opacity:1;
+          visibility:visible;
+        }
+      }
+      animation-name: fadein;
+      animation-duration:1s;
+      animation-fill-mode: forwards;
     }
   }
   &__image{

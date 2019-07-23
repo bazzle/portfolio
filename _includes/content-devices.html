@@ -1,5 +1,11 @@
 <div class="devices">
-  <img class="devices__image devices__tablet" src="{{site.url}}/assets/images/projects/{{ include.filename }}-1.png" alt="{{ include.alt }}" />
-  <img class="devices__image devices__phone" src="{{site.url}}/assets/images/projects/{{ include.filename }}-2.png" alt="{{ include.alt }}" />
-  <img class="devices__image devices__phone" src="{{site.url}}/assets/images/projects/{{ include.filename }}-3.png" alt="{{ include.alt }}" />
+  <div class="devices__item devices__item__tablet">
+    <img class="devices__image" src="{{site.url}}/assets/images/projects/{{ include.filename }}-1.png" alt="{{ include.alt }}" />
+  </div>
+  <div class="devices__item devices__item__phone">
+    <img class="devices__image" src="{{site.url}}/assets/images/projects/{{ include.filename }}-2.png" alt="{{ include.alt }}" />
+  </div>
+  <div class="devices__item devices__item__phone">
+    <img class="devices__image" src="{{site.url}}/assets/images/projects/{{ include.filename }}-3.png" alt="{{ include.alt }}" />
+  </div>
 </div>

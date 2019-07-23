@@ -208,25 +208,47 @@ var functions = function() {
   }
 
   function flickity(){
-    $('.flickity-slides').flickity({
-      // options
-      cellAlign: 'left',
-      contain: true,
-      pageDots: false,
-    });
-    $('.flickity-slides-fade').flickity({
-      // options
-      cellAlign: 'left',
-      contain: true,
-      pageDots: false,
-      autoPlay: 2500,
-      fade: true,
-      prevNextButtons: false,
-      pauseAutoPlayOnHover: false,
-      draggable: false
-    });
-  }
 
+    var slides = document.querySelectorAll('.flickity-slides');
+    slides.forEach(function(i){
+      var images = i.querySelectorAll('img');
+      function whenloaded(){
+        i.classList.add('loaded');
+        var flkty = new Flickity(i, {
+        // options
+        cellAlign: 'left',
+        contain: true,
+        pageDots: false,
+        });
+      };
+      imagesLoaded(images, function(){
+        whenloaded();
+      });
+    });
+
+    var slides = document.querySelectorAll('.flickity-slides-fade');
+    slides.forEach(function(i){
+      var images = i.querySelectorAll('img');
+      function whenloaded(){
+        i.classList.add('loaded');
+        var flkty = new Flickity(i, {
+          // options
+          cellAlign: 'left',
+          contain: true,
+          pageDots: false,
+          autoPlay: 2500,
+          fade: true,
+          prevNextButtons: false,
+          pauseAutoPlayOnHover: false,
+          draggable: false
+        });
+      };
+      imagesLoaded(images, function(){
+        whenloaded();
+      });
+    });
+
+  }
 
 
   return{

@@ -77,53 +77,40 @@ $rotatex:rotateX(10deg);
 			max-width:1500px;
 			box-shadow:$shadow;
 			margin-bottom:$text-padding-std*4;
-			@include bp-minus($bp1){
-				margin:$text-padding-std 0;
-			}
 		}
 		.devices{
 		  width:100%;
 		  height:auto;
-			margin:$text-padding-std 0;
-		  @include bp($bp1){
-		  	margin-bottom:$text-padding-std*4;
-		  	display:flex;
-		  	align-items:center;
-		    justify-content:space-between;
-		    flex-direction:row;
+		  margin-bottom:$text-padding-std*4;
+		  display:flex;
+	  	align-items:center;
+	    justify-content:space-between;
+	    flex-direction:row;
+		  &__item{
+		    flex-shrink: 0;
+			  &__tablet{
+					border-radius:5px;
+					width:40%;
+					max-width:600px;
+			  }
+			  &__phone{
+					border-radius:10px;
+			  	width:20%;
+					max-width:330px;
+			  }
 		  }
 		  &__image{
 		  	box-shadow:$shadow;
 		    width:100%;
 		    height:auto;
-		    flex-shrink: 0;
 		    @include bp($bp1){
 		    	margin:0;
 		    }
 		  }
-		  &__tablet{
-				border-radius:5px;
-				@include bp($bp1){
-					width:40%;
-					max-width:600px;
-				}
-		  }
-		  &__phone{
-				border-radius:10px;
-		  	@include bp($bp1){
-					width:20%;
-					max-width:330px;
-				}
-		  }
 		}
 	}
 	&__main-snippet{
-		padding-top:0;
-		padding-bottom:$text-padding-std;
-		@include bp($bp2){
-			padding-top:$text-padding-std*1;
-			padding-bottom:$text-padding-std*5;
-		}
+		margin-bottom:$text-padding-std*4;
 		@include col-std(75%);
 		p{
 			margin-bottom:$text-padding-std;
