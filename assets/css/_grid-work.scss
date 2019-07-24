@@ -15,9 +15,6 @@ $grid-space:$text-padding-std;
     position:relative;
     top:0;
     bottom:0;
-    @include bp-minus($bp1){
-      position:relative;
-    }
   }
   &__items-grid{
     position:relative;
@@ -30,17 +27,29 @@ $grid-space:$text-padding-std;
     padding:$grid-space;
     padding-left:0;
     padding-right:0;
-    @include bp($bp1){
-      display:grid;
-      background-color:$white;
+    display:grid;
+    background-color:$white;
+    grid-gap:$grid-space/2;
+    grid-template-columns:1fr 1fr 1fr;
+    @include bp($bp1) {
       grid-gap:$grid-space;
-      grid-template-columns:1fr 1fr 1fr;
     }
+      
   }
   &__item{
     display:block;
     margin-top:$grid-space;
     margin-bottom:$grid-space;
+    margin:0;
+    background-color:#fafafa;
+    position:relative;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 0;
+      padding-bottom:100%;
+    }
     @mixin wide{
       height:auto;
       &:before{
@@ -52,71 +61,56 @@ $grid-space:$text-padding-std;
         padding-bottom:50%;
       }
     }
-    @include bp($bp1){
-      margin:0;
-      background-color:#fafafa;
-      position:relative;
-      &:before{
-        content: "";
-        display: inline-block;
-        width: 1px;
-        height: 0;
-        padding-bottom:100%;
-      }
+    // 1
+    &:nth-of-type(1){
+      grid-column:1/3;
+      @include wide;
     }
-
-    @include bp($bp1){
-      // 0
-      &:nth-of-type(1){
-        grid-column:1/3;
-        @include wide;
-      }
-      &:nth-of-type(2){
-        grid-column:3/4;
-      }
-      // 1
-      &:nth-of-type(3){
-        grid-column:1/2;
-      }
-      &:nth-of-type(4){
-        grid-column:2/4;
-        @include wide;
-      }
-      
-      // 2
-      &:nth-of-type(6){
-        grid-column:3/4;
-      }
-      &:nth-of-type(5){
-        grid-column:1/3;
-        @include wide;
-      }
-      // 3
-      &:nth-of-type(7){
-        grid-column:1/2;
-      }
-      &:nth-of-type(8){
-        grid-column:2/4;
-        @include wide;
-      }
-      // 4
-      &:nth-of-type(9){
-        grid-column:1/2;
-      }
-      &:nth-of-type(10){
-        grid-column:2/3;
-      }
-      &:nth-of-type(11){
-        grid-column:3/4;
-      }
-      // 5
-      &:nth-of-type(12){
-        grid-column:1/3;
-        @include wide;
-      }
-      &:nth-of-type(13){
-        grid-column:3/4;
-      }
+    &:nth-of-type(2){
+      grid-column:3/4;
+    }
+    // 2
+    &:nth-of-type(3){
+      grid-column:1/2;
+    }
+    &:nth-of-type(4){
+      grid-column:2/4;
+      @include wide;
+    }
+    
+    // 3
+    &:nth-of-type(6){
+      grid-column:3/4;
+    }
+    &:nth-of-type(5){
+      grid-column:1/3;
+      @include wide;
+    }
+    // 4
+    &:nth-of-type(7){
+      grid-column:1/2;
+    }
+    &:nth-of-type(8){
+      grid-column:2/4;
+      @include wide;
+    }
+    // 5
+    &:nth-of-type(9){
+      grid-column:1/2;
+    }
+    &:nth-of-type(10){
+      grid-column:2/3;
+    }
+    &:nth-of-type(11){
+      grid-column:3/4;
+    }
+    // 6
+    &:nth-of-type(12){
+      grid-column:1/3;
+      @include wide;
+    }
+    &:nth-of-type(13){
+      grid-column:3/4;
     }
   }
   &__link{
@@ -171,9 +165,12 @@ $grid-space:$text-padding-std;
     overflow:visible;
     span{
       @include link-styled;
-      text-align:center;
-      white-space: nowrap;
       color:$black;
+      line-height:1.2;
+      text-align:center;
+      @include bp-minus($bp1){
+        font-size:.7em;
+      }
     }
   }
 }
@@ -186,22 +183,25 @@ $grid-space:$text-padding-std;
   position:absolute;
   top:0;
   left:0;
-  @include bp-minus($bp1){
-    min-height:300px;
-  }
   &__inner{
     background-color:$white;
-    width:150px;
-    height:150px;
+    width:50%;
+    height:50%;
     top:0;
     left:0;
     @include align-center;
-    border-radius:75px;
+    text-align:center;
+    border-radius:50%;
     overflow:visible;
     span{
+      display:block;
+      width:80%;
       @include link-styled;
+      line-height:1.2;
       text-align:center;
-      white-space: nowrap;
+      @include bp-minus($bp1){
+        font-size:.7em;
+      }
     }
   }
 }

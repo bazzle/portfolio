@@ -176,10 +176,10 @@ var functions = function() {
 
   function menu() {
     function lockview() {
-      $("body").addClass("noscroll");
+      $("html").addClass("noscroll");
     }
     function unlockview() {
-      $("body").removeClass("noscroll");
+      $("html").removeClass("noscroll");
     }
     function menu_open() {
       $(".js-menu-button").attr("aria-pressed", true).attr("aria-expanded", true);
